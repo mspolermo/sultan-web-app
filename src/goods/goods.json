@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "image": "/imges/soap.jpg",
+        "title": "Мыло",
+        "sizeType": "weight",
+        "size": 100,
+        "barcode": 111111,
+        "producer": "Avon",
+        "brand": "new-brand",
+        "desription": "Хорошее мыло",
+        "price": 100
+    },
+    {
+        "id": 2,
+        "image": "/imges/cola.jpg",
+        "title": "Кока-кола",
+        "sizeType": "volume",
+        "size": 100,
+        "barcode": 111111,
+        "producer": "Coca-cola",
+        "brand": "lite",
+        "desription": "Кока-кола лайт",
+        "price": 70
+    }
+]
