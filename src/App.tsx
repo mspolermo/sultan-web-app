@@ -4,7 +4,7 @@ import React from 'react';
 function App() {
   return (
     <div>
-      React TS App
+      <p>Hello world. It's me! </p>
     </div>
   );
 }
