@@ -1,26 +1,38 @@
 [
     {
         "id": 1,
-        "image": "/imges/soap.jpg",
-        "title": "Мыло",
+        "image": "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/a5/xd/0291352c2449c3332898a477b66b.jpg",
+        "title": "AOS",
         "sizeType": "weight",
         "size": 100,
-        "barcode": 111111,
-        "producer": "Avon",
-        "brand": "new-brand",
-        "desription": "Хорошее мыло",
-        "price": 100
+        "barcode": 4604049097548,
+        "producer": "Нэфис",
+        "brand": "AOS",
+        "desription": "средство для мытья посуды Crystal",
+        "price": 48.76
     },
     {
         "id": 2,
-        "image": "/imges/cola.jpg",
-        "title": "Кока-кола",
+        "image": "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/76/49/56d3c968b6c1afeecde6ffaef5cc.jpg",
+        "title": "ARIEL",
         "sizeType": "volume",
         "size": 100,
-        "barcode": 111111,
-        "producer": "Coca-cola",
-        "brand": "lite",
-        "desription": "Кока-кола лайт",
-        "price": 70
+        "barcode": 4604049097548,
+        "producer": "Нэфис",
+        "brand": "AOS",
+        "desription": "Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
+        "price": 48.76
+    },
+    {
+        "id": 3,
+        "image": "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/18/b6/b8bxda7f1b97c923e97162591328.jpg",
+        "title": "BIMAX",
+        "sizeType": "volume",
+        "size": 100,
+        "barcode": 4604049097548,
+        "producer": "Нэфис",
+        "brand": "AOS",
+        "desription": "Порошок стиральный Автомат 100 пятен COMPACT",
+        "price": 48.76
     }
 ]

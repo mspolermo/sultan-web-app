@@ -1,31 +1,16 @@
 import React from 'react';
+import GoodsList from './components/GoodsList';
 import goods from './goods/goods.json'
-
-interface goods {
-  id: number,
-  image: string,
-  title: string,
-  sizeType: string,
-  size: number,
-  barcode: number,
-  producer: string,
-  brand: string,
-  desription: string,
-  price: number
-}
-
-
-
+import './App.css'
 
 function App() {
   return (
     <div>
-      <h1>Unbelievable!</h1>
-      {goods.map( good => {
-        return (
-          <div>{good.producer}</div>
-        )
-      })}
+      <div className="header">HEADER</div>
+      <GoodsList goods={goods} />
+      <GoodsList goods={goods} />
+      <GoodsList goods={goods} />
+      <div className="footer">FOOTER</div>
     </div>
   );
 }
