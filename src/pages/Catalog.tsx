@@ -8,8 +8,6 @@ const Catalog: FC = () => {
         <div>
             <div className="header">HEADER OF CATALOG PAGE</div>
             <GoodsList goods={goods} />
-            <GoodsList goods={goods} />
-            <GoodsList goods={goods} />
             <div className="footer">FOOTER</div>
       </div>
     );

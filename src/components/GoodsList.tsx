@@ -7,11 +7,17 @@ interface GoodsListProps {
     goods: IGoods[]
 };
 
+
 const GoodsList: FC<GoodsListProps> = ({goods}) => {
+
+
     return (
         <div className="goods-list__list">
             {goods.map( good => 
-              <GoodsItem key={good.id} good={good} />
+              <GoodsItem 
+                key={good.id} 
+                good={good}
+                />
             )}
         </div>
     );

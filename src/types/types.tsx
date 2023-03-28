@@ -8,5 +8,6 @@ export interface IGoods {
     producer: string,
     brand: string,
     desription: string,
-    price: number
+    price: number,
+    careType: Array<string>
   }

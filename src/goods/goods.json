@@ -1,38 +1,292 @@
 [
     {
         "id": 1,
-        "image": "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/a5/xd/0291352c2449c3332898a477b66b.jpg",
-        "title": "AOS",
-        "sizeType": "weight",
-        "size": 100,
+        "image": "https://lenta.servicecdn.ru/globalassets/1/-/28/652/72/260721_2.png",
+        "title": "HEAD&SHOULDERS ",
+        "sizeType": "volume",
+        "size": 400,
         "barcode": 4604049097548,
-        "producer": "Нэфис",
-        "brand": "AOS",
-        "desription": "средство для мытья посуды Crystal",
-        "price": 48.76
+        "producer": "Проктер энд Гэмбл",
+        "brand": "HEAD&SHOULDERS",
+        "desription": "Основной уход 2в1, Шампунь-бальзам против перхоти",
+        "price": 448.76,
+        "careType": [
+            "body", 
+            "hair"
+        ]
     },
     {
         "id": 2,
-        "image": "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/76/49/56d3c968b6c1afeecde6ffaef5cc.jpg",
-        "title": "ARIEL",
-        "sizeType": "volume",
-        "size": 100,
+        "image": "https://lenta.servicecdn.ru/globalassets/1/-/57/70/99/340803_3.png",
+        "title": "CAMAY Botanicals",
+        "sizeType": "weight",
+        "size": 85,
         "barcode": 4604049097548,
-        "producer": "Нэфис",
-        "brand": "AOS",
-        "desription": "Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
-        "price": 48.76
+        "producer": "Sodium",
+        "brand": "CAMAY",
+        "desription": "Японская сакура, Туалетное мыло",
+        "price": 70.59,
+        "careType": [
+            "hands",
+            "body",
+            "legs",
+            "face",
+            "hygienic"
+        ]
     },
     {
         "id": 3,
-        "image": "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/18/b6/b8bxda7f1b97c923e97162591328.jpg",
-        "title": "BIMAX",
+        "image": "https://lenta.servicecdn.ru/globalassets/1/-/64/51/41/444809_1.png?preset=fulllossywhite",
+        "title": "ЧЕРНЫЙ ЖЕМЧУГ",
+        "sizeType": "volume",
+        "size": 46,
+        "barcode": 4604049097548,
+        "producer": "Нэфис",
+        "brand": "ЧЕРНЫЙ ЖЕМЧУГ",
+        "desription": "Глубокое увлажнение, Крем для лица для всех возрастов",
+        "price": 239.99,
+        "careType": [
+            "face"
+        ]
+    },
+    {
+        "id": 4,
+        "image": "https://lenta.servicecdn.ru/globalassets/1/-/38/80/44/262441_1.png",
+        "title": "DOVE New Refresh + care",
+        "sizeType": "volume",
+        "size": 250,
+        "barcode": 4604049097548,
+        "producer": "Юнилевер Русь",
+        "brand": "DOVE",
+        "desription": "Шампунь сухой для волос",
+        "price": 359.99,
+        "careType": [
+            "hair"
+        ]
+    },
+    {
+        "id": 5,
+        "image": "https://lenta.servicecdn.ru/globalassets/1/-/54/62/29/330681_4.png",
+        "title": "CAFE MIMI Sun Care",
         "sizeType": "volume",
         "size": 100,
         "barcode": 4604049097548,
+        "producer": "Юнилевер Русь",
+        "brand": "Sodium",
+        "desription": "Крем после загара для лица и тела с Д-Пантенолом и витамином Е, восстанавливающий, для сухой и поврежденной кожи",
+        "price": 76.59,
+        "careType": [
+            "sun",
+            "face",
+            "body"
+        ]
+    },
+    {
+        "id": 6,
+        "image": "https://lenta.servicecdn.ru/globalassets/1/-/60/77/86/391520.png",
+        "title": "NIVEA Fresh kick",
+        "sizeType": "volume",
+        "size": 100,
+        "barcode": 4604049097548,
+        "producer": "Проктер энд Гэмбл",
+        "brand": "NIVEA",
+        "desription": "Пена для бритья",
+        "price": 209.99,
+        "careType": [
+            "shaving"
+        ]
+    },
+    {
+        "id": 7,
+        "image": "https://lenta.servicecdn.ru/globalassets/1/-/65/88/83/457670_1.png",
+        "title": "ARKO",
+        "sizeType": "weight",
+        "size": 100,
+        "barcode": 4604049097548,
+        "producer": "Юнилевер Русь",
+        "brand": "ARKO",
+        "desription": "Набор подарочный мужской: Гель для бритья Anti-Irritation + Станок Pro3",
+        "price": 456.99,
+        "careType": [
+            "present",
+            "shaving"
+        ]
+    },
+    {
+        "id": 8,
+        "image": "https://lenta.servicecdn.ru/globalassets/1/-/44/40/17/230581_2.png",
+        "title": "FAMILIA Plus",
+        "sizeType": "weight",
+        "size": 320,
+        "barcode": 4604049097548,
+        "producer": "Хаят Кимья",
+        "brand": "FAMILIA",
+        "desription": "Волшебный цветок, Бумага туалетная 2-слоя, 12шт",
+        "price": 233.49,
+        "careType": [
+            "hygienic",
+            "paper"
+        ]
+    },
+    {
+        "id": 9,
+        "image": "https://lenta.servicecdn.ru/globalassets/1/-/67/60/61/476671_1.png",
+        "title": "COLGATE Plax",
+        "sizeType": "volume",
+        "size": 250,
+        "barcode": 4604049097548,
         "producer": "Нэфис",
-        "brand": "AOS",
-        "desription": "Порошок стиральный Автомат 100 пятен COMPACT",
-        "price": 48.76
+        "brand": "COLGATE",
+        "desription": "Освежающая мята, Ополаскиватель для полости рта",
+        "price": 119.99,
+        "careType": [
+            "mouth"
+        ]
+    },
+    {
+        "id": 10,
+        "image": "https://lenta.servicecdn.ru/globalassets/1/-/40/33/39/263314.png",
+        "title": "PAPIA",
+        "sizeType": "weight",
+        "size": 270,
+        "barcode": 4604049097548,
+        "producer": "Хаят Кимья",
+        "brand": "PAPIA",
+        "desription": "Полотенца бумажные 3-слоя, 2шт",
+        "price": 108.99,
+        "careType": [
+            "hygienic",
+            "paper"
+        ]
+    },
+    {
+        "id": 11,
+        "image": "https://lenta.servicecdn.ru/globalassets/1/-/33/17/98/331891_7.png",
+        "title": "ORGANIC SHOP",
+        "sizeType": "volume",
+        "size": 250,
+        "barcode": 4604049097548,
+        "producer": "Юнилевер Русь",
+        "brand": "ORGANIC SHOP",
+        "desription": "Бразильский кофе, Скраб для тела",
+        "price": 119.99,
+        "careType": [
+            "body"
+        ]
+    },
+    {
+        "id": 12,
+        "image": "https://lenta.servicecdn.ru/globalassets/1/-/05/61/59/247967_5.png",
+        "title": "PALMOLIVE Men ",
+        "sizeType": "volume",
+        "size": 250,
+        "barcode": 4604049097548,
+        "producer": "Колгейт-Палмолив",
+        "brand": "PALMOLIVE",
+        "desription": "Экстремально освежающий Арктический ветер 3в1, Гель для душа мужской и шампунь",
+        "price": 218.99,
+        "careType": [
+            "body", 
+            "hair",
+            "face"
+        ]
+    },
+    {
+        "id": 13,
+        "image": "https://lenta.servicecdn.ru/globalassets/1/-/57/99/51/398357_1.png",
+        "title": "ABSOLUT Pro Series",
+        "sizeType": "weight",
+        "size": 90,
+        "barcode": 4604049097548,
+        "producer": "Sodium",
+        "brand": "ABSOLUT",
+        "desription": "Серебро+гиалурон антибактериальное, Туалетное мыло",
+        "price": 49.79,
+        "careType": [
+            "hands",
+            "body",
+            "legs",
+            "face",
+            "hygienic"
+        ]
+    },
+    {
+        "id": 14,
+        "image": "https://lenta.servicecdn.ru/globalassets/1/-/63/30/02/419887_1.png",
+        "title": "COMPLIMENT Panthenol",
+        "sizeType": "volume",
+        "size": 150,
+        "barcode": 4604049097548,
+        "producer": "БисаболРу",
+        "brand": "COMPLIMENT",
+        "desription": "Спрей для лица и тела",
+        "price": 249.99,
+        "careType": [
+            "sun",
+            "face",
+            "body"
+        ]
+    },
+    {
+        "id": 15,
+        "image": "https://lenta.servicecdn.ru/globalassets/1/-/38/13/93/247787.png",
+        "title": "NIVEA",
+        "sizeType": "volume",
+        "size": 200,
+        "barcode": 4604049097548,
+        "producer": "Байерсдорф",
+        "brand": "NIVEA",
+        "desription": "Пена для бритья, Восстанавливающая, для чувствительной кожи",
+        "price": 296.89,
+        "careType": [
+            "face",
+            "shaving"
+        ]
+    },
+    {
+        "id": 16,
+        "image": "https://lenta.servicecdn.ru/globalassets/1/-/66/28/25/464882.png",
+        "title": "ELSKIN To be a star",
+        "sizeType": "weight",
+        "size": 2200,
+        "barcode": 4604049097548,
+        "producer": "КорИндастриз",
+        "brand": "ELSKIN",
+        "desription": "Набор подарочный женский Стар пати: Звездные патчи, Звездная маска, Звездная маска-пленка",
+        "price": 444.99,
+        "careType": [
+            "present",
+            "face"
+        ]
+    },
+    {
+        "id": 17,
+        "image": "https://lenta.servicecdn.ru/globalassets/1/-/54/38/47/276651_2.png",
+        "title": "PRESIDENT White&Yummy",
+        "sizeType": "weight",
+        "size": 75,
+        "barcode": 4604049097548,
+        "producer": "Зеленая Дубрава",
+        "brand": "PRESIDENT",
+        "desription": "Зубная паста, Шоколадный фондан с мятой",
+        "price": 244.99,
+        "careType": [
+            "mouth"
+        ]
+    },
+    {
+        "id": 18,
+        "image": "https://lenta.servicecdn.ru/globalassets/1/-/66/39/18/448113_1.png",
+        "title": "WE ARE THE PLANET Legal Joy",
+        "sizeType": "volume",
+        "size": 75,
+        "barcode": 4604049097548,
+        "producer": "Нэфис",
+        "brand": "WE ARE THE PLANET ",
+        "desription": "Крем для ног охлаждающий от усталости",
+        "price": 149.99,
+        "careType": [
+            "legs"
+        ]
     }
 ]
