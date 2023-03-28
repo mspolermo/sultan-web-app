@@ -10,7 +10,6 @@ type ProductCardParams = {
 
 const ProductCard: FC = () => {
     const params = useParams<ProductCardParams>();
-    console.log ('params from card = ' + params.id);
     const navigate = useNavigate();
 
     return (
