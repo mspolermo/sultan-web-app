@@ -73,6 +73,11 @@ align-items: center;
 }
 
 
+.checkbox_hidden {
+    display: none;
+}
+
+
 
 .footer {
     height: 500px;

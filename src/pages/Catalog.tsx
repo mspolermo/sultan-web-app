@@ -12,6 +12,7 @@ import CheckboxList from "../components/CheckboxList";
 const Catalog: FC = () => {
 
     const [products, setProducts] = useState(goods)
+    
     const [selectedSort, setSelectedSort] = useState('')
     const sortGoods = (sort:string) => {
         setSelectedSort(sort);
@@ -51,23 +52,57 @@ const Catalog: FC = () => {
     const [searchProdicerQuery, setSearchProdicerQuery] = useState('')
     const sortedFiltreadSearchedGoods = useMemo(() => {
         return sortedAndFiltredGoods.filter( (product:IGoods) => product.producer.toLowerCase().includes(searchProdicerQuery.toLowerCase())) 
-      }, [searchProdicerQuery, sortedAndFiltredGoods])
+    }, [searchProdicerQuery, sortedAndFiltredGoods])
     
-      const [minPrice, setMinPrice] = useState('')
-      const sortedFiltreadSearchedMinGoods = useMemo(() => {
+    const [minPrice, setMinPrice] = useState('')
+    const sortedFiltreadSearchedMinGoods = useMemo(() => {
         return sortedFiltreadSearchedGoods.filter( (product:IGoods) => product.price > +minPrice) 
-      }, [minPrice, sortedFiltreadSearchedGoods])
+    }, [minPrice, sortedFiltreadSearchedGoods])
 
-      const [maxPrice, setMaxPrice] = useState('')
-      const sortedFiltreadSearchedPriceGoods = useMemo(() => {
+    const [maxPrice, setMaxPrice] = useState('')
+    const sortedFiltreadSearchedPriceGoods = useMemo(() => {
         if (maxPrice !== '') {
             return sortedFiltreadSearchedMinGoods.filter( (product:IGoods) => product.price < +maxPrice)
         }
         return sortedFiltreadSearchedMinGoods
-      }, [maxPrice, sortedFiltreadSearchedMinGoods])
+    }, [maxPrice, sortedFiltreadSearchedMinGoods])
+
+
+    const [checkbox, setCheckbox] = useState()
+    const [checkboxArray, setCheckboxArray] = useState([]);  
+    const checkboxArraySost = useMemo( () => {
+        if (!checkbox) return
+        if (checkbox[0] == 'add') {
+            setCheckboxArray ([...checkboxArray, checkbox[1]])
+        }else if (checkbox[0] == 'remove'){
+            setCheckboxArray(checkboxArray.filter( (producer: string) => producer !== checkbox[1]))
+        } 
+    }, [checkbox])
+    const finalFiltredGoods:any = useMemo( () => {
+        if(!checkbox) {
+            return sortedFiltreadSearchedPriceGoods
+        }
+        let goodsByCheckboxArray:any = [];
+        for (let i=0; i<checkboxArray.length; i++) {
+            let pushItem = sortedFiltreadSearchedPriceGoods.filter( (product:IGoods) => product.producer.includes(checkboxArray[i]))
+            pushItem.map( (product:any) => goodsByCheckboxArray.push(product))
+        }
+        if (goodsByCheckboxArray[0] == undefined) {
+            goodsByCheckboxArray = sortedFiltreadSearchedPriceGoods
+        }
+        return goodsByCheckboxArray
+
+    }, [checkboxArray, sortedFiltreadSearchedPriceGoods])
 
     return (
         <div>
+
+                <CheckboxList 
+                    value={checkbox}
+                    onClick={setCheckbox}
+                    filtredGoodsList={sortedFiltreadSearchedPriceGoods} 
+                />
+                
             
             <div className="header">HEADER OF CATALOG PAGE</div>
             <div> 
@@ -89,7 +124,7 @@ const Catalog: FC = () => {
                     onChange={setSearchProdicerQuery}
                     placeholder = "Поиск"
                 />
-                <CheckboxList />              
+             
             </div>
             <div style={{display: 'flex', justifyContent: 'space-between'}}> 
                 <h3>КОСМЕТИКА И ГИГИЕНА</h3>
@@ -123,7 +158,7 @@ const Catalog: FC = () => {
                 <FilterButton value={selectedFilter} careType = 'mouth' name = 'Гигиена полости рта' onClick={filerGoods} />
                 <FilterButton value={selectedFilter} careType = 'paper' name = 'Бумажная продукция' onClick={filerGoods} />
             </div>
-            <GoodsList goods={sortedFiltreadSearchedPriceGoods} />
+            <GoodsList goods={finalFiltredGoods} />
             <div className="footer">FOOTER</div>
       </div>
     );

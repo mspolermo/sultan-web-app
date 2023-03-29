@@ -10,8 +10,12 @@ interface FiletrButtonProps {
 
 
 const FilterButton: FC<FiletrButtonProps> = ({name, value, onClick, careType}) => {
+    let clickCount = 0;
     return (
-        <button value={value} onClick={(event) => onClick({careType})}>{name}
+        <button 
+            value={value} 
+            onClick={(event) => onClick({careType})}
+        >{name}
         </button>
     )
 }
