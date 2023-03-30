@@ -3,6 +3,10 @@
     background-color: lightgray;
 }
 
+.body {
+    display: flex;
+}
+
 .goods-list__list{
     display: flex;
     flex-wrap: wrap;

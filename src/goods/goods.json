@@ -288,5 +288,52 @@
         "careType": [
             "legs"
         ]
+    },
+    {
+        "id": 19,
+        "image": "https://lenta.servicecdn.ru/globalassets/1/-/60/62/21/386198.png",
+        "title": "NIVEA",
+        "sizeType": "volume",
+        "size": 200,
+        "barcode": 4604049097548,
+        "producer": "Проктер энд Гэмбл",
+        "brand": "NIVEA",
+        "desription": "Крем и роза, Гель для душа ",
+        "price": 324.99,
+        "careType": [
+            "body"
+        ]
+    },
+    {
+        "id": 20,
+        "image": "https://lenta.servicecdn.ru/globalassets/1/-/26/192/81/254196_1.png",
+        "title": "PALMOLIVE Men Спорт",
+        "sizeType": "volume",
+        "size": 750,
+        "barcode": 4604049097548,
+        "producer": "Колгейт-Палмолив",
+        "brand": "PALMOLIVE",
+        "desription": "Гель для душа мужской, Восстанавливающий 3в1",
+        "price": 578.99,
+        "careType": [
+            "body",
+            "hair",
+            "face"
+        ]
+    },
+    {
+        "id": 21,
+        "image": "https://lenta.servicecdn.ru/globalassets/1/-/47/19/34/442968.png",
+        "title": "TRESEMME Botanique Detox",
+        "sizeType": "volume",
+        "size": 400,
+        "barcode": 4604049097548,
+        "producer": "Юнилевер Русь",
+        "brand": "TRESEMME",
+        "desription": "Кондиционер для волос увлажняющий, без силиконов",
+        "price": 394.99,
+        "careType": [
+            "hair"
+        ]
     }
 ]
