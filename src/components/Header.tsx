@@ -3,20 +3,20 @@ import '../App.css'
 
 
 interface HeaderProps {
-    cost:number;
+    finalPrice:number;
     productTypeValue?: string;
     onProductTypeChange?: (newType: string) => void;
 };
 
 
 
-const Header: FC<HeaderProps> = ({cost, productTypeValue, onProductTypeChange}) => {
+const Header: FC<HeaderProps> = ({finalPrice, productTypeValue, onProductTypeChange}) => {
 
 
     return (
         <div>
             <div className="header">MAIN HEADER
-                <button>Корзина: {cost} ₸</button>
+                <button>Корзина: {finalPrice} ₸</button>
             </div>
             
         </div>

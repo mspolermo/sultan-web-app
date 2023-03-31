@@ -1,30 +1,32 @@
 import React, {FC, useEffect, useMemo, useState} from "react";
-import { IGoods } from "../types/types";
+import { IBasketGoods, IGoods } from "../types/types";
 
 interface BasketItemProps {
-    order: IGoods;
+    order: IBasketGoods;
     totalValue?: number;
-    onTotalChange?: (newTotal: number) => void;
+    onTotalChange?: (newTotal: Array<number>) => void;
+    onRemove? : (removeItem :IGoods) => void;
 };
 
-const BasketItem: FC<BasketItemProps> = ({order, totalValue, onTotalChange}) => {
-    // productType
-    const [counter, setCounter] = useState (1)
-    const [sumOfPrice, setSumofPrice] = useState(order.price)
+
+const BasketItem: FC<BasketItemProps> = ({order, totalValue, onTotalChange, onRemove}) => {
+    const [counter, setCounter] = useState (order.basketCount)
 
     function upCounter () {
         setCounter(counter+1)
     }
     function downCounter () {
         if (counter>0) {
-            setCounter(counter-1)
+            setCounter(counter-1)   
     }
     }
-    const sumCount = useEffect (() => {
-        setSumofPrice((counter*order.price))
-        onTotalChange?.((sumOfPrice))
-    }, [counter, sumOfPrice])
+    useEffect( () => {
+        onTotalChange?.(([order.id ,counter]))
+    }, [counter])
 
+    function removing () {
+        onRemove?.(order);
+    }
 
     return (
         <div>
@@ -49,8 +51,8 @@ const BasketItem: FC<BasketItemProps> = ({order, totalValue, onTotalChange}) => 
             <button onClick= {downCounter}>-</button>
             <p>Количество {counter}</p>
             <button onClick= {upCounter}>+</button>
-            <p className="goods-list__price">{sumOfPrice} ₸</p>
-            <button>Удалить</button>            
+            <p className="goods-list__price">{order.price} ₸</p>
+            <button onClick={removing}>Удалить</button>            
         </div>
     )
 }

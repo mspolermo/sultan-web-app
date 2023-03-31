@@ -18,25 +18,80 @@ interface goods {
 function App() {
 
   const [productType, setProductType] = useState<undefined | string>('');
-  console.log(productType)
-  const [cost, setCost] = useState<number> (0)
-  
   const [orderList, setOrderList] = useState<any>([])
   useEffect(() => {
     if ((productType!== undefined) && (productType!=='') ) {
-      setOrderList([...orderList, goods[+productType - 1]]);
-      setCost(Math.ceil(cost + goods[+productType - 1].price))
+      
+    //Добавляем товар из списка
+      if (!orderList.includes(goods[+productType - 1])) {
+        setOrderList([...orderList, goods[+productType - 1]]);
+        setSumOfMoneyArray([...sumOfMoneyArray, [goods[+productType - 1].id, 1]])
+      } else {
+    //Если он уже добавлен 1 раз в корзину
+        
+        let array = sumOfMoneyArray;
+        let foundIndex: number = -1;
+        let foundProductId = goods[+productType - 1].id;
+        let foundProductValue;
+  
+        for( let i=0; i<array.length; i++) {
+          if ((array[i])[0] == goods[+productType - 1].id) {
+            foundIndex = i;
+            foundProductValue = (array[i])[1]
+          }
+        }
+
+        array.splice(foundIndex, 1)
+        setSumOfMoneyArray([...array, [foundProductId, foundProductValue + 1] ])
+      }
     }
   }, [productType]);  
-  //console.log(orderList)
 
-  
-  // const waitOrders = useMemo (() =>{
-  //   if ((productType!== undefined) && (productType!=='') ) {
-  //     setOrderList([...orderList, goods[+productType - 1]]);
-  //     setCost(Math.ceil(cost + goods[+productType - 1].price))
-  //   }
-  // }, [productType])
+  const [orderThing, setOrderThing] = useState<undefined | Array<number>>();
+  const [sumOfMoneyArray, setSumOfMoneyArray] = useState <any>([])
+  useEffect(() => { 
+    //Подсчет суммы товаров в корзине (при измения количества товаров)  
+    if (orderThing!==undefined) {
+      let array = sumOfMoneyArray;
+      let findIndex: number = -1;
+
+      for( let i=0; i<array.length; i++) {
+        if ((array[i])[0] == orderThing[0]) {
+          findIndex = i;
+        }
+      }
+      array.splice(findIndex, 1)
+      setSumOfMoneyArray([...array, orderThing])
+    }
+  }, [orderThing])
+  const finalPrice = useMemo (() => {
+    let result = 0;
+      for (let i=0; i<sumOfMoneyArray.length; i++) {
+        result+= (goods[(sumOfMoneyArray[i][0])-1].price * (sumOfMoneyArray[i])[1])
+      }
+    return result  
+  }, [sumOfMoneyArray])
+
+  const [removeThing, setRemoveThing] = useState<undefined | IGoods>();
+  useMemo(() => {
+    let index = orderList.indexOf(removeThing, 0);
+    if (index!== -1) {
+      orderList.splice(index, 1);
+      setOrderList(orderList)
+    }
+    if (orderList.length !== sumOfMoneyArray.length) {
+      let array = sumOfMoneyArray;
+      let findIndex: number = -1;
+
+      for( let i=0; i<array.length; i++) {
+        if ((array[i])[0] == removeThing?.id) {
+          findIndex = i;
+        }
+      }
+      array.splice(findIndex, 1)
+      setSumOfMoneyArray([...array])
+    }
+  }, [removeThing])
 
   return (
     <BrowserRouter>
@@ -44,7 +99,7 @@ function App() {
         <NavLink to="/">Каталог товаров</NavLink>
         <NavLink to="/basket">Корзина</NavLink>
         <Header 
-            cost={cost}
+            finalPrice={finalPrice}
             productTypeValue={productType}
             onProductTypeChange={setProductType}        
         />
@@ -62,6 +117,10 @@ function App() {
           />}></Route>
           <Route path='/basket' element={<Basket
             orderList={orderList}
+            onOrderThingChange={setOrderThing}
+            onRemove={setRemoveThing}
+            finalPrice={finalPrice}
+            basketThingsArray={sumOfMoneyArray} 
           />}></Route>
         </Routes>
       </div>

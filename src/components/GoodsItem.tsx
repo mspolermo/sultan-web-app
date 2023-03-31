@@ -15,7 +15,6 @@ const GoodsItem: FC<GoodsItemProps> = ({good, productTypeValue, onProductTypeCha
 
     function addOrder(e:any, good:IGoods) {
         e.stopPropagation();
-        console.log('нажали GoodsItem')
         onProductTypeChange?.((good.id).toString())
 
     }
