@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import Header from './components/Header';
 import { IGoods } from './types/types';
+import AdminPage from './pages/AdminPage';
 
 interface goods {
   goods: IGoods[];
@@ -103,6 +104,7 @@ function App() {
       <div>
         <NavLink to="/">Каталог товаров</NavLink>
         <NavLink to="/basket">Корзина</NavLink>
+        <NavLink to="/admin">Админка</NavLink>
         <Header 
             finalPrice={finalPrice}
             productTypeValue={productType}
@@ -128,6 +130,7 @@ function App() {
             finalPrice={finalPrice}
             basketThingsArray={sumOfMoneyArray} 
           />}></Route>
+          <Route path='/admin' element={<AdminPage />}></Route>
         </Routes>
       </div>
     </BrowserRouter>
