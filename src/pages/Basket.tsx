@@ -1,9 +1,6 @@
 import React, {FC, useEffect, useMemo, useState} from "react";
 import '../App.css'
 import BasketItem from "../components/BasketItem";
-import GoodsItem from "../components/GoodsItem";
-import Header from "../components/Header";
-import OrdersList from "../components/OrdersList";
 import { IBasketGoods, IGoods } from "../types/types";
 
 interface BasketProps{

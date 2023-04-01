@@ -1,7 +1,6 @@
 import React, {FC, useEffect, useMemo, useState} from "react";
 import '../App.css'
 import CatalogBody from "../components/CatalogBody";
-import Header from "../components/Header";
 import { IGoods } from "../types/types";
 
 interface CatalogProps {

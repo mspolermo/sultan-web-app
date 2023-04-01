@@ -14,13 +14,20 @@ const FilterButton: FC<FiletrButtonProps> = ({name, value, onClick, careType}) =
 
     function clickHandler (event:any) {
         onClick({careType})
+        setClickCount(clickCount + 1)
+
+        if (clickCount>0) {
+            setClickCount(0)
+            careType='requerType'
+            onClick({careType})
+        }
     }
 
 
     return (
         <button 
             value={value} 
-            onClick={(event) => onClick({careType})}
+            onClick={clickHandler}
         >{name}
         </button>
     )

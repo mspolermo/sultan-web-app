@@ -117,6 +117,7 @@ function App() {
             onProductTypeChange={setProductType}          
           />}></Route>
           <Route path='/catalog/:id' element={<ProductCard
+            goods={goods} 
             productTypeValue={productType}
             onProductTypeChange={setProductType}
           />}></Route>

@@ -1,9 +1,9 @@
 import React, {FC, useEffect, useState} from "react";
-import goods from '../goods/goods.json'
+//import goods from '../goods/goods.json'
 import '../App.css'
 import GoodsItem from "../components/GoodsItem";
 import { useNavigate, useParams } from "react-router-dom";
-import Header from "../components/Header";
+import { IGoods } from "../types/types";
 
 
 type ProductCardParams = {
@@ -11,11 +11,12 @@ type ProductCardParams = {
 }
 
 interface ProductCardProps {
+    goods: IGoods[];
     productTypeValue?: string;
     onProductTypeChange?: (newType: string) => void;
 }
 
-const ProductCard: FC<ProductCardProps> = ({productTypeValue, onProductTypeChange}) => {
+const ProductCard: FC<ProductCardProps> = ({goods, productTypeValue, onProductTypeChange}) => {
     const params = useParams<ProductCardParams>();
     const navigate = useNavigate();
   
