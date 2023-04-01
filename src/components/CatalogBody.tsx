@@ -19,7 +19,10 @@ const CatalogBody: FC<CatalogBodyProps> = ({goods, productTypeValue, onProductTy
     //BasketLogic
     const [productType, setProductType] = useState<undefined | string>('');
     useEffect(() => {
-        if (productType !==undefined) {onProductTypeChange?.(productType.toString())}
+        if (productType !==undefined) {
+            onProductTypeChange?.(productType.toString())
+            setProductType(undefined)
+        }
       }, [productType]);
 
         //Sorting logic
@@ -199,6 +202,19 @@ const CatalogBody: FC<CatalogBodyProps> = ({goods, productTypeValue, onProductTy
                         onClick={checkboxing}
                         filtredGoodsList={sortedFiltreadSearchedPriceGoods} 
                     />
+                    <div style={{display: 'flex', flexDirection: 'column', marginTop: '20px'}}> 
+                        <FilterButton value={selectedFilter} careType = 'body'name = 'Уход за телом'onClick={filerGoods} />
+                        <FilterButton value={selectedFilter} careType = 'hands' name = 'Уход за руками' onClick={filerGoods} />
+                        <FilterButton value={selectedFilter} careType = 'legs' name = 'Уход за ногами' onClick={filerGoods} />
+                        <FilterButton value={selectedFilter} careType = 'face' name = 'Уход за лицом' onClick={filerGoods} />
+                        <FilterButton value={selectedFilter} careType = 'hair' name = 'Уход за волосами' onClick={filerGoods} />
+                        <FilterButton value={selectedFilter} careType = 'sun' name = 'Средства для загара' onClick={filerGoods} />
+                        <FilterButton value={selectedFilter} careType = 'shaving' name = 'Средства для бритья' onClick={filerGoods} />
+                        <FilterButton value={selectedFilter} careType = 'present' name = 'Подарочные наборы' onClick={filerGoods} />
+                        <FilterButton value={selectedFilter} careType = 'hygienic' name = 'Гигиеническая продукция' onClick={filerGoods} />
+                        <FilterButton value={selectedFilter} careType = 'mouth' name = 'Гигиена полости рта' onClick={filerGoods} />
+                        <FilterButton value={selectedFilter} careType = 'paper' name = 'Бумажная продукция' onClick={filerGoods} />
+                    </div>
                 </div>
                 <GoodsList 
                     goods={pagingPage} 

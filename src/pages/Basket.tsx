@@ -55,6 +55,7 @@ const Basket: FC<BasketProps> = ({orderList, onOrderThingChange, onRemove, final
     useEffect( () => {
         if (removeThing) {
             onRemove?.(removeThing)
+            //console.log(removeThing)
         }
     }, [removeThing])
 

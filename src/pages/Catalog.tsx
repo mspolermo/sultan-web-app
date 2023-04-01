@@ -14,7 +14,10 @@ const Catalog: FC<CatalogProps> = ({goods, productTypeValue, onProductTypeChange
 
     const [productType, setProductType] = useState<undefined | string>('');
     useEffect(() => {
-        if (productType !==undefined) {onProductTypeChange?.(productType.toString())}
+        if (productType !==undefined) {
+            onProductTypeChange?.(productType.toString())
+            setProductType(undefined)
+        }
       }, [productType]);
 
     

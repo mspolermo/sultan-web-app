@@ -1,5 +1,5 @@
 import { type } from "os";
-import React, {FC} from "react";
+import React, {FC, useState} from "react";
 
 interface FiletrButtonProps {
     name: string;
@@ -10,7 +10,13 @@ interface FiletrButtonProps {
 
 
 const FilterButton: FC<FiletrButtonProps> = ({name, value, onClick, careType}) => {
-    let clickCount = 0;
+    const [clickCount, setClickCount] = useState(0);
+
+    function clickHandler (event:any) {
+        onClick({careType})
+    }
+
+
     return (
         <button 
             value={value} 

@@ -22,7 +22,11 @@ const ProductCard: FC<ProductCardProps> = ({productTypeValue, onProductTypeChang
         //Basket
     const [productType, setProductType] = useState<undefined | string>('');
     useEffect(() => {
-        if (productType !==undefined) {onProductTypeChange?.(productType.toString())}
+        if (productType !==undefined) {
+            onProductTypeChange?.(productType.toString())
+            //console.log(productType)
+            //добавил setProductType(undefined)
+            setProductType(undefined)}
       }, [productType]);
 
 

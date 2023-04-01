@@ -16,7 +16,6 @@ const GoodsItem: FC<GoodsItemProps> = ({good, productTypeValue, onProductTypeCha
     function addOrder(e:any, good:IGoods) {
         e.stopPropagation();
         onProductTypeChange?.((good.id).toString())
-
     }
 
     return (

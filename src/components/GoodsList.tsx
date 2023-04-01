@@ -13,8 +13,12 @@ interface GoodsListProps {
 const GoodsList: FC<GoodsListProps> = ({goods, productTypeValue, onProductTypeChange}) => {
         //BasketLogic
     const [productType, setProductType] = useState<undefined | string>('');
+    
     useEffect(() => {
-        if (productType !==undefined) {onProductTypeChange?.(productType.toString())}
+        if (productType !==undefined) {
+            onProductTypeChange?.(productType.toString())
+            setProductType(undefined)
+        }
       }, [productType]);
 
 

@@ -19,7 +19,9 @@ function App() {
 
   const [productType, setProductType] = useState<undefined | string>('');
   const [orderList, setOrderList] = useState<any>([])
+
   useEffect(() => {
+    
     if ((productType!== undefined) && (productType!=='') ) {
       
     //Добавляем товар из списка
@@ -40,10 +42,10 @@ function App() {
             foundProductValue = (array[i])[1]
           }
         }
-
         array.splice(foundIndex, 1)
         setSumOfMoneyArray([...array, [foundProductId, foundProductValue + 1] ])
       }
+      setProductType(undefined)
     }
   }, [productType]);  
 
@@ -74,9 +76,12 @@ function App() {
 
   const [removeThing, setRemoveThing] = useState<undefined | IGoods>();
   useMemo(() => {
-    let index = orderList.indexOf(removeThing, 0);
+
+    let index = orderList.findIndex ( (order:any) => order.id === removeThing?.id)
+
     if (index!== -1) {
       orderList.splice(index, 1);
+      
       setOrderList(orderList)
     }
     if (orderList.length !== sumOfMoneyArray.length) {
