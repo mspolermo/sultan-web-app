@@ -23,6 +23,8 @@ const AddNewProduct: FC<AddNewProductProps> =({create}) => {
         }
     },[product])
 
+    
+
     const [title, setTitle] = useState('')
     const titleChanger = (value:string) => {
         setTitle(value);

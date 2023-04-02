@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import goods from './goods/goods.json'
+//import goods from './goods/goods.json'
+import goodsJSON from './goods/goodsJSON.json'
 import './App.css'
 
 import Catalog from './pages/Catalog';
@@ -17,6 +18,7 @@ interface goods {
 
 
 function App() {
+  const [goods, setGoods] = useState<IGoods []> (goodsJSON)
 
   const [productType, setProductType] = useState<undefined | string>('');
   const [orderList, setOrderList] = useState<any>([])
@@ -24,21 +26,25 @@ function App() {
   useEffect(() => {
     
     if ((productType!== undefined) && (productType!=='') ) {
-      
+
+      // console.log(goods[+productType - 1]])
+      // Меняем на это
+      // console.log(goods.find ((good) => good.id == +productType))
+      let currentObject: IGoods | undefined = goods.find ((good) => good.id == +productType)
     //Добавляем товар из списка
-      if (!orderList.includes(goods[+productType - 1])) {
-        setOrderList([...orderList, goods[+productType - 1]]);
-        setSumOfMoneyArray([...sumOfMoneyArray, [goods[+productType - 1].id, 1]])
+      if (!orderList.includes(currentObject)) {
+        setOrderList([...orderList, currentObject]);
+        setSumOfMoneyArray([...sumOfMoneyArray, [currentObject?.id, 1]])
       } else {
     //Если он уже добавлен 1 раз в корзину
         
         let array = sumOfMoneyArray;
         let foundIndex: number = -1;
-        let foundProductId = goods[+productType - 1].id;
+        let foundProductId = currentObject?.id;
         let foundProductValue;
   
         for( let i=0; i<array.length; i++) {
-          if ((array[i])[0] == goods[+productType - 1].id) {
+          if ((array[i])[0] == currentObject?.id) {
             foundIndex = i;
             foundProductValue = (array[i])[1]
           }
@@ -70,7 +76,14 @@ function App() {
   const finalPrice = useMemo (() => {
     let result = 0;
       for (let i=0; i<sumOfMoneyArray.length; i++) {
-        result+= (goods[(sumOfMoneyArray[i][0])-1].price * (sumOfMoneyArray[i])[1])
+      
+        //изменил
+        //goods[(sumOfMoneyArray[i][0]) - 1]
+        // на
+    // console.log(goods.find ((good) => good.id == sumOfMoneyArray[i][0])))
+
+        let objectForSum:IGoods | undefined = goods.find ((good) => good.id == sumOfMoneyArray[i][0])
+        result+= (objectForSum!.price * (sumOfMoneyArray[i])[1])
       }
     return result  
   }, [sumOfMoneyArray])
@@ -130,7 +143,10 @@ function App() {
             finalPrice={finalPrice}
             basketThingsArray={sumOfMoneyArray} 
           />}></Route>
-          <Route path='/admin' element={<AdminPage />}></Route>
+          <Route path='/admin' element={<AdminPage 
+            onGoodsUpdate ={setGoods}
+            JSONfile = {goodsJSON}
+          />}></Route>
         </Routes>
       </div>
     </BrowserRouter>
