@@ -29,7 +29,7 @@ const BasketItem: FC<BasketItemProps> = ({order, totalValue, onTotalChange, onRe
     }
 
     return (
-        <div>
+        <div style={{margin: 10, border: '2px solid black', padding: 10, width: '400px', height: '500px'}}>
             <div className="goods-list__img-block">
                 <img className="goods-list__img" src={order.image} alt="Img" />
             </div>

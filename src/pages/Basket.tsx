@@ -9,12 +9,14 @@ interface BasketProps{
     onRemove? : (removeItem :IGoods) => void;
     finalPrice: number;
     basketThingsArray?:any;
+    onOffer: any;
 }
 
-const Basket: FC<BasketProps> = ({orderList, onOrderThingChange, onRemove, finalPrice, basketThingsArray}) => {
+const Basket: FC<BasketProps> = ({orderList, onOrderThingChange, onRemove, finalPrice, basketThingsArray, onOffer}) => {
 
     const [basketArray, setBasketArray] = useState<any>();
-    
+    console.log(basketArray)
+
     const basketChanger = useEffect( () => {
         basketThingsArray.sort((a: Array<number>, b: Array<number>) => a[0] - b[0])
         orderList.sort((a:IGoods, b:IGoods) => a.id - b.id )
@@ -56,23 +58,31 @@ const Basket: FC<BasketProps> = ({orderList, onOrderThingChange, onRemove, final
         }
     }, [removeThing])
 
+    const offer = () => {
+        alert('Спасибо за заказ!')
+        setBasketArray([])
+        onOffer?.([])
+    }
+
     return (
         <div>
             <div>КОРЗИНА</div>
             <div className="goods-list__list">
-            {basketArray?.map( (order:IBasketGoods) => 
-                <div key={order.id} >
-                    <BasketItem 
-                        order={order}
-                        onTotalChange={setTotal} 
-                        onRemove={setRemoveThing}
-                    />
-                </div>    
-            )}
-            <button>Оформить заказ</button>
-            <p>Итого: {finalPrice} ₸</p>
-        </div>
-            <div className="footer">FOOTER</div>
+                {basketArray?.map( (order:IBasketGoods) => 
+                    <div key={order.id} >
+                        <BasketItem 
+                            order={order}
+                            onTotalChange={setTotal} 
+                            onRemove={setRemoveThing}
+                        />
+                    </div>    
+                )}
+            
+            </div>
+            <div>
+                <button onClick={offer}>Оформить заказ</button>
+                <p>Итого: {finalPrice} ₸</p>   
+            </div>
         </div>
     );
 };

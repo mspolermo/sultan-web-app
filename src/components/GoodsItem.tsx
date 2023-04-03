@@ -8,9 +8,10 @@ interface GoodsItemProps {
     good: IGoods;
     productTypeValue?: string;
     onProductTypeChange?: (newType: string) => void;
+    goods?: IGoods[];
 };
 
-const GoodsItem: FC<GoodsItemProps> = ({good, productTypeValue, onProductTypeChange}) => {
+const GoodsItem: FC<GoodsItemProps> = ({good, goods, productTypeValue, onProductTypeChange}) => {
     const navigate = useNavigate();
 
     function addOrder(e:any, good:IGoods) {
@@ -19,9 +20,13 @@ const GoodsItem: FC<GoodsItemProps> = ({good, productTypeValue, onProductTypeCha
         console.log(good.id)
     }
 
+    console.log(good.id - 1)
+    let index = goods?.findIndex ((find) => find.id == good.id)
+    console.log(index)
+
     return (
         <div 
-        onClick={() => navigate('/catalog/' + (good.id - 1))}
+        onClick={() => navigate('/catalog/' + (index))}
         className="goods-list__item">
             <div className="goods-list__img-block">
                 <img className="goods-list__img" src={good.image} alt="Img" />

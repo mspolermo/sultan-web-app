@@ -27,7 +27,6 @@ const Catalog: FC<CatalogProps> = ({goods, productTypeValue, onProductTypeChange
                 productTypeValue={productType}
                 onProductTypeChange={setProductType}
             />
-            <div className="footer">FOOTER</div>
       </div>
     );
 };

@@ -11,6 +11,9 @@ import { NavLink } from 'react-router-dom';
 import Header from './components/Header';
 import { IGoods } from './types/types';
 import AdminPage from './pages/AdminPage';
+import Breadcrumbs from './components/Breadcrumbs';
+import Main from './pages/Main';
+import Footer from './components/Footer';
 
 interface goods {
   goods: IGoods[];
@@ -112,10 +115,15 @@ function App() {
     }
   }, [removeThing])
 
+  function offer () {
+    setOrderList([])
+    setSumOfMoneyArray([])
+  }
+
   return (
     <BrowserRouter>
       <div>
-        <NavLink to="/">Каталог товаров</NavLink>
+        <NavLink to="/catalog/">Каталог товаров</NavLink>
         <NavLink to="/basket">Корзина</NavLink>
         <NavLink to="/admin">Админка</NavLink>
         <Header 
@@ -123,10 +131,12 @@ function App() {
             productTypeValue={productType}
             onProductTypeChange={setProductType}        
         />
+        <Breadcrumbs goods={goods} />
       </div>
       <div>
         <Routes>
-          <Route path='/' element={<Catalog
+          <Route path='/' element={<Main/>}></Route>
+          <Route path='/catalog/' element={<Catalog
             goods={goods} 
             productTypeValue={productType}
             onProductTypeChange={setProductType}          
@@ -136,19 +146,21 @@ function App() {
             productTypeValue={productType}
             onProductTypeChange={setProductType}
           />}></Route>
-          <Route path='/basket' element={<Basket
+          <Route path='/basket/' element={<Basket
             orderList={orderList}
             onOrderThingChange={setOrderThing}
             onRemove={setRemoveThing}
             finalPrice={finalPrice}
-            basketThingsArray={sumOfMoneyArray} 
+            basketThingsArray={sumOfMoneyArray}
+            onOffer={offer} 
           />}></Route>
-          <Route path='/admin' element={<AdminPage 
+          <Route path='/admin/' element={<AdminPage 
             onGoodsUpdate ={setGoods}
             JSONfile = {goodsJSON}
           />}></Route>
         </Routes>
       </div>
+      <Footer />
     </BrowserRouter>
   );
 }

@@ -1,5 +1,4 @@
 import React, {FC, useEffect, useMemo, useState} from "react";
-import { Link, Route } from "react-router-dom";
 import AddNewProduct from "../components/AddNewProduct";
 import AdminList from "../components/AdminList";
 import { IGoods } from "../types/types";
@@ -33,25 +32,25 @@ const AdminPage: FC<AdminPageProps> =({onGoodsUpdate, JSONfile}) => {
     const createProduct = (newProduct:IGoods) => {
         if (newProduct !== undefined) {
         if (newProduct.title == '') {
-            console.log ('Заполните поле Title')
+            alert('Заполните поле Title')
         } else if( newProduct.image == '') {
-            console.log ('Вставте ссылку в поле ImageURL')
+            alert('Вставте ссылку в поле ImageURL')
         } else if( newProduct.sizeType == '') {
-            console.log ('Выберите тип размера')
+            alert('Выберите тип размера товара')
         } else if( newProduct.size == 0) {
-            console.log ('Выберите число в поле Размер')
-        } else if( newProduct.size == 0) {
-            console.log ('Выберите число в поле Штрихкод')
+            alert('Выберите число в поле Размер')
+        } else if( newProduct.barcode == 0) {
+            alert('Выберите число в поле Штрихкод')
         } else if (newProduct.producer == '') {
-            console.log ('Заполните поле Производитель')
+            alert('Заполните поле Производитель')
         } else if (newProduct.brand == '') {
-            console.log ('Заполните поле Бренд')
+            alert('Заполните поле Бренд')
         } else if (newProduct.desription == '') {
-            console.log ('Заполните поле Описание')
+            alert('Заполните поле Описание')
         } else if( newProduct.price == 0) {
-            console.log ('Выберите число в поле Цена')
+            alert('Выберите число в поле Цена')
         } else if( newProduct.careType.length == 1) {
-            console.log ('Укажите минимум 1 тип товара')
+            alert('Укажите минимум 1 тип товара')
         } else {
             setProducts([...products, newProduct])
         }
@@ -113,10 +112,10 @@ const AdminPage: FC<AdminPageProps> =({onGoodsUpdate, JSONfile}) => {
         setProducts(JSONfile)
     }
 
+
+    
     return (
         <div>
-            
-
             <button onClick={handleFormJson}>Загрузить список из JSON-файла</button>
             <AddNewProduct create={createProduct}/>
             <AdminList products={products} onRemove={setRemoveThing} onEdit={setEditThing}/>

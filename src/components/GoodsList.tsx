@@ -28,6 +28,7 @@ const GoodsList: FC<GoodsListProps> = ({goods, productTypeValue, onProductTypeCh
               <GoodsItem 
                 key={good.id} 
                 good={good}
+                goods={goods}
                 productTypeValue={productType}
                 onProductTypeChange={setProductType}
                 />

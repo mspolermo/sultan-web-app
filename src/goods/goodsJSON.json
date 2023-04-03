@@ -9,7 +9,7 @@
         "producer": "Проктер энд Гэмбл",
         "brand": "HEAD&SHOULDERS",
         "desription": "Основной уход 2в1, Шампунь-бальзам против перхоти",
-        "price": 448.76,
+        "price": 448,
         "careType": [
             "requerType",
             "body", 
@@ -26,7 +26,7 @@
         "producer": "Sodium",
         "brand": "CAMAY",
         "desription": "Японская сакура, Туалетное мыло",
-        "price": 70.59,
+        "price": 70,
         "careType": [
             "requerType",
             "hands",
@@ -46,7 +46,7 @@
         "producer": "Нэфис",
         "brand": "ЧЕРНЫЙ ЖЕМЧУГ",
         "desription": "Глубокое увлажнение, Крем для лица для всех возрастов",
-        "price": 239.99,
+        "price": 239,
         "careType": [
             "requerType",
             "face"
@@ -62,7 +62,7 @@
         "producer": "Юнилевер Русь",
         "brand": "DOVE",
         "desription": "Шампунь сухой для волос",
-        "price": 359.99,
+        "price": 359,
         "careType": [
             "requerType",
             "hair"
@@ -78,7 +78,7 @@
         "producer": "Юнилевер Русь",
         "brand": "Sodium",
         "desription": "Крем после загара для лица и тела с Д-Пантенолом и витамином Е, восстанавливающий, для сухой и поврежденной кожи",
-        "price": 76.59,
+        "price": 76,
         "careType": [
             "requerType",
             "sun",
@@ -96,7 +96,7 @@
         "producer": "Проктер энд Гэмбл",
         "brand": "NIVEA",
         "desription": "Пена для бритья",
-        "price": 209.99,
+        "price": 209,
         "careType": [
             "requerType",
             "shaving"
@@ -112,7 +112,7 @@
         "producer": "Юнилевер Русь",
         "brand": "ARKO",
         "desription": "Набор подарочный мужской: Гель для бритья Anti-Irritation + Станок Pro3",
-        "price": 456.99,
+        "price": 456,
         "careType": [
             "requerType",
             "present",
@@ -129,7 +129,7 @@
         "producer": "Хаят Кимья",
         "brand": "FAMILIA",
         "desription": "Волшебный цветок, Бумага туалетная 2-слоя, 12шт",
-        "price": 233.49,
+        "price": 233,
         "careType": [
             "requerType",
             "hygienic",
@@ -146,7 +146,7 @@
         "producer": "Нэфис",
         "brand": "COLGATE",
         "desription": "Освежающая мята, Ополаскиватель для полости рта",
-        "price": 119.99,
+        "price": 119,
         "careType": [
             "requerType",
             "mouth"
@@ -162,7 +162,7 @@
         "producer": "Хаят Кимья",
         "brand": "PAPIA",
         "desription": "Полотенца бумажные 3-слоя, 2шт",
-        "price": 108.99,
+        "price": 108,
         "careType": [
             "requerType",
             "hygienic",
@@ -179,7 +179,7 @@
         "producer": "Юнилевер Русь",
         "brand": "ORGANIC SHOP",
         "desription": "Бразильский кофе, Скраб для тела",
-        "price": 119.99,
+        "price": 119,
         "careType": [
             "requerType",
             "body"
@@ -195,7 +195,7 @@
         "producer": "Колгейт-Палмолив",
         "brand": "PALMOLIVE",
         "desription": "Экстремально освежающий Арктический ветер 3в1, Гель для душа мужской и шампунь",
-        "price": 218.99,
+        "price": 218,
         "careType": [
             "requerType",
             "body", 
@@ -213,7 +213,7 @@
         "producer": "Sodium",
         "brand": "ABSOLUT",
         "desription": "Серебро+гиалурон антибактериальное, Туалетное мыло",
-        "price": 49.79,
+        "price": 49,
         "careType": [
             "requerType",
             "hands",
@@ -233,7 +233,7 @@
         "producer": "БисаболРу",
         "brand": "COMPLIMENT",
         "desription": "Спрей для лица и тела",
-        "price": 249.99,
+        "price": 249,
         "careType": [
             "requerType",
             "sun",
@@ -251,7 +251,7 @@
         "producer": "Байерсдорф",
         "brand": "NIVEA",
         "desription": "Пена для бритья, Восстанавливающая, для чувствительной кожи",
-        "price": 296.89,
+        "price": 296,
         "careType": [
             "requerType",
             "face",
@@ -268,7 +268,7 @@
         "producer": "КорИндастриз",
         "brand": "ELSKIN",
         "desription": "Набор подарочный женский Стар пати: Звездные патчи, Звездная маска, Звездная маска-пленка",
-        "price": 444.99,
+        "price": 444,
         "careType": [
             "requerType",
             "present",
@@ -285,7 +285,7 @@
         "producer": "Зеленая Дубрава",
         "brand": "PRESIDENT",
         "desription": "Зубная паста, Шоколадный фондан с мятой",
-        "price": 244.99,
+        "price": 244,
         "careType": [
             "requerType",
             "mouth"
@@ -301,7 +301,7 @@
         "producer": "Нэфис",
         "brand": "WE ARE THE PLANET ",
         "desription": "Крем для ног охлаждающий от усталости",
-        "price": 149.99,
+        "price": 149,
         "careType": [
             "requerType",
             "legs"
@@ -317,7 +317,7 @@
         "producer": "Проктер энд Гэмбл",
         "brand": "NIVEA",
         "desription": "Крем и роза, Гель для душа ",
-        "price": 324.99,
+        "price": 324,
         "careType": [
             "requerType",
             "body"
@@ -333,7 +333,7 @@
         "producer": "Колгейт-Палмолив",
         "brand": "PALMOLIVE",
         "desription": "Гель для душа мужской, Восстанавливающий 3в1",
-        "price": 578.99,
+        "price": 578,
         "careType": [
             "requerType",
             "body",
@@ -351,7 +351,7 @@
         "producer": "Юнилевер Русь",
         "brand": "TRESEMME",
         "desription": "Кондиционер для волос увлажняющий, без силиконов",
-        "price": 394.99,
+        "price": 394,
         "careType": [
             "requerType",
             "hair"

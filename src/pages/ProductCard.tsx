@@ -36,10 +36,10 @@ const ProductCard: FC<ProductCardProps> = ({goods, productTypeValue, onProductTy
             <button onClick={() => {navigate('/')}}>Назад</button>
             <GoodsItem 
                 good={goods[Number(params.id)]}
+                goods={goods}
                 productTypeValue={productType}
                 onProductTypeChange={setProductType}
             />
-            <div className="footer">FOOTER</div>
         </div>
     );
 };
