@@ -13,7 +13,7 @@ import { IGoods } from './types/types';
 import AdminPage from './pages/AdminPage';
 import Breadcrumbs from './components/Breadcrumbs';
 import Main from './pages/Main';
-import Footer from './components/Footer';
+import Footer from './components/UI/Footer/Footer';
 
 interface goods {
   goods: IGoods[];

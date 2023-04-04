@@ -4,12 +4,13 @@ interface MyInputProps {
     value: any;
     onChange: any;
     placeholder: string;
-    type?:string
+    type?:string;
+    className?: string
 }
 
-const MyInput:FC<MyInputProps> = ({value, onChange, placeholder, type}) => {
+const MyInput:FC<MyInputProps> = ({value, onChange, placeholder, type, className}) => {
     return (
-        <input value={value} type={type} placeholder={placeholder} onChange={e => onChange(e.target.value)} />
+        <input className={className} value={value} type={type} placeholder={placeholder} onChange={e => onChange(e.target.value)} />
     );
 };
 

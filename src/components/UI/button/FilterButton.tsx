@@ -6,10 +6,11 @@ interface FiletrButtonProps {
     value: any;
     careType?: string;
     onClick?: any;
+    className?: string;
 }
 
 
-const FilterButton: FC<FiletrButtonProps> = ({name, value, onClick, careType}) => {
+const FilterButton: FC<FiletrButtonProps> = ({name, value, onClick, careType, className}) => {
     const [clickCount, setClickCount] = useState(0);
 
     function clickHandler (event:any) {
@@ -25,7 +26,7 @@ const FilterButton: FC<FiletrButtonProps> = ({name, value, onClick, careType}) =
 
 
     return (
-        <button 
+        <button className={className}
             value={value} 
             onClick={clickHandler}
         >{name}

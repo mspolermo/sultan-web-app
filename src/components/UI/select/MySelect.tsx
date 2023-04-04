@@ -6,6 +6,7 @@ interface MySelectProps {
     defaultValue: string;
     value: string;
     onChange: (sort: string) => void;
+    className?: string;
 }
 
 interface OptionsPropery {
@@ -13,9 +14,9 @@ interface OptionsPropery {
     name: string;
 }
 
-const MySelect: FC<MySelectProps> = ({options, defaultValue, value, onChange}) => {
+const MySelect: FC<MySelectProps> = ({options, defaultValue, value, onChange, className}) => {
     return (
-        <select value={value} onChange = {event => onChange(event.target.value)}>
+        <select className={className} value={value} onChange = {event => onChange(event.target.value)}>
             <option disabled value="">{defaultValue}</option>
             {options.map( option =>
                 <option key={option.value}
