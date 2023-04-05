@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sultan-web-app/static/css/main.a7dc6592.css",
-    "main.js": "/sultan-web-app/static/js/main.0743b14b.js",
+    "main.css": "/sultan-web-app/static/css/main.700140bd.css",
+    "main.js": "/sultan-web-app/static/js/main.0ad71d0a.js",
     "static/media/inter-v12-cyrillic_latin-700.svg": "/sultan-web-app/static/media/inter-v12-cyrillic_latin-700.0a85e1f2fd11f8afbfa1.svg",
     "static/media/inter-v12-cyrillic_latin-800.svg": "/sultan-web-app/static/media/inter-v12-cyrillic_latin-800.382996fbcd8c32082084.svg",
     "static/media/inter-v12-cyrillic_latin-600.svg": "/sultan-web-app/static/media/inter-v12-cyrillic_latin-600.9a42e1a5ef4e43e16747.svg",
@@ -38,11 +38,11 @@
     "static/media/inter-v12-cyrillic_latin-900.woff2": "/sultan-web-app/static/media/inter-v12-cyrillic_latin-900.b95aa58f7ce664a2bc2e.woff2",
     "static/media/inter-v12-cyrillic_latin-regular.woff2": "/sultan-web-app/static/media/inter-v12-cyrillic_latin-regular.b0a21561d96f6b662763.woff2",
     "index.html": "/sultan-web-app/index.html",
-    "main.a7dc6592.css.map": "/sultan-web-app/static/css/main.a7dc6592.css.map",
-    "main.0743b14b.js.map": "/sultan-web-app/static/js/main.0743b14b.js.map"
+    "main.700140bd.css.map": "/sultan-web-app/static/css/main.700140bd.css.map",
+    "main.0ad71d0a.js.map": "/sultan-web-app/static/js/main.0ad71d0a.js.map"
   },
   "entrypoints": [
-    "static/css/main.a7dc6592.css",
-    "static/js/main.0743b14b.js"
+    "static/css/main.700140bd.css",
+    "static/js/main.0ad71d0a.js"
   ]
 }
