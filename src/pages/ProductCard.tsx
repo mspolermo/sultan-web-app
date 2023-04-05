@@ -4,6 +4,7 @@ import '../App.css'
 import GoodsItem from "../components/GoodsItem";
 import { useNavigate, useParams } from "react-router-dom";
 import { IGoods } from "../types/types";
+import ProductItem from "../components/ProductItem";
 
 
 type ProductCardParams = {
@@ -33,8 +34,8 @@ const ProductCard: FC<ProductCardProps> = ({goods, productTypeValue, onProductTy
 
     return (
         <div>
-            <button onClick={() => {navigate('/')}}>Назад</button>
-            <GoodsItem 
+            {/* <button onClick={() => {navigate('/')}}>Назад</button> */}
+            <ProductItem
                 good={goods[Number(params.id)]}
                 goods={goods}
                 productTypeValue={productType}

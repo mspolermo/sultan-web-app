@@ -212,26 +212,27 @@ const CatalogBody: FC<CatalogBodyProps> = ({goods, productTypeValue, onProductTy
                             placeholder = "Поиск"
                         />
                         <div className="catalog-body__img">
-                            <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.5294 16.5294L13.0989 13.0928L16.5294 16.5294ZM15 8.5C15 10.2239 14.3152 11.8772 13.0962 13.0962C11.8772 14.3152 10.2239 15 8.5 15C6.77609 15 5.12279 14.3152 3.90381 13.0962C2.68482 11.8772 2 10.2239 2 8.5C2 6.77609 2.68482 5.12279 3.90381 3.90381C5.12279 2.68482 6.77609 2 8.5 2C10.2239 2 11.8772 2.68482 13.0962 3.90381C14.3152 5.12279 15 6.77609 15 8.5V8.5Z" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg>
+                            <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.5294 16.5294L13.0989 13.0928L16.5294 16.5294ZM15 8.5C15 10.2239 14.3152 11.8772 13.0962 13.0962C11.8772 14.3152 10.2239 15 8.5 15C6.77609 15 5.12279 14.3152 3.90381 13.0962C2.68482 11.8772 2 10.2239 2 8.5C2 6.77609 2.68482 5.12279 3.90381 3.90381C5.12279 2.68482 6.77609 2 8.5 2C10.2239 2 11.8772 2.68482 13.0962 3.90381C14.3152 5.12279 15 6.77609 15 8.5V8.5Z" stroke="white" strokeWidth="1.3" strokeLinecap="round"/></svg>
                         </div>
                     </div> 
                     <CheckboxList 
                         value={checkbox}
                         onClick={checkboxing}
-                        filtredGoodsList={sortedFiltreadSearchedPriceGoods} 
+                        filtredGoodsList={sortedFiltreadSearchedPriceGoods}
+                        className ='catalog-body__'
                     />
-                    <div style={{display: 'flex', flexDirection: 'column', marginTop: '20px'}}> 
-                        <FilterButton value={selectedFilter} careType = 'body'name = 'Уход за телом'onClick={filerGoods} />
-                        <FilterButton value={selectedFilter} careType = 'hands' name = 'Уход за руками' onClick={filerGoods} />
-                        <FilterButton value={selectedFilter} careType = 'legs' name = 'Уход за ногами' onClick={filerGoods} />
-                        <FilterButton value={selectedFilter} careType = 'face' name = 'Уход за лицом' onClick={filerGoods} />
-                        <FilterButton value={selectedFilter} careType = 'hair' name = 'Уход за волосами' onClick={filerGoods} />
-                        <FilterButton value={selectedFilter} careType = 'sun' name = 'Средства для загара' onClick={filerGoods} />
-                        <FilterButton value={selectedFilter} careType = 'shaving' name = 'Средства для бритья' onClick={filerGoods} />
-                        <FilterButton value={selectedFilter} careType = 'present' name = 'Подарочные наборы' onClick={filerGoods} />
-                        <FilterButton value={selectedFilter} careType = 'hygienic' name = 'Гигиеническая продукция' onClick={filerGoods} />
-                        <FilterButton value={selectedFilter} careType = 'mouth' name = 'Гигиена полости рта' onClick={filerGoods} />
-                        <FilterButton value={selectedFilter} careType = 'paper' name = 'Бумажная продукция' onClick={filerGoods} />
+                    <div className='catalog-body__filter-left'> 
+                        <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'body'name = 'Уход за телом'onClick={filerGoods} />
+                        <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'hands' name = 'Уход за руками' onClick={filerGoods} />
+                        <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'legs' name = 'Уход за ногами' onClick={filerGoods} />
+                        <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'face' name = 'Уход за лицом' onClick={filerGoods} />
+                        <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'hair' name = 'Уход за волосами' onClick={filerGoods} />
+                        <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'sun' name = 'Средства для загара' onClick={filerGoods} />
+                        <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'shaving' name = 'Средства для бритья' onClick={filerGoods} />
+                        <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'present' name = 'Подарочные наборы' onClick={filerGoods} />
+                        <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'hygienic' name = 'Гигиеническая продукция' onClick={filerGoods} />
+                        <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'mouth' name = 'Гигиена полости рта' onClick={filerGoods} />
+                        <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'paper' name = 'Бумажная продукция' onClick={filerGoods} />
                     </div>   
                 </div>
                 <GoodsList 
@@ -239,14 +240,17 @@ const CatalogBody: FC<CatalogBodyProps> = ({goods, productTypeValue, onProductTy
                     productTypeValue={productType}
                     onProductTypeChange={setProductType}
                 />
+                
             </div>
         </div>
-            <div >
-                {pagesArray.map( p =>
-                    <span 
-                        key={p}
-                        onClick={() => setPageNumber(p)}
-                    >{p}</span>)}
+            <div className="pagination">
+                <div className="container pagination__container">
+                    {pagesArray.map( p =>
+                        <span className="pagination__number"
+                            key={p}
+                            onClick={() => setPageNumber(p)}
+                        >{p}</span>)}
+                </div>    
             </div>
       </div>
     );

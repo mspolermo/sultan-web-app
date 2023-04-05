@@ -13,7 +13,7 @@ import { IGoods } from './types/types';
 import AdminPage from './pages/AdminPage';
 import Breadcrumbs from './components/Breadcrumbs';
 import Main from './pages/Main';
-import Footer from './components/UI/Footer/Footer';
+import Footer from './components/Footer';
 
 interface goods {
   goods: IGoods[];
@@ -61,6 +61,8 @@ function App() {
 
   const [orderThing, setOrderThing] = useState<undefined | Array<number>>();
   const [sumOfMoneyArray, setSumOfMoneyArray] = useState <any>([])
+  const [countGoodsInBasket, setcountGoodsInBasket] = useState (0)
+
   useEffect(() => { 
     //Подсчет суммы товаров в корзине (при измения количества товаров)  
     if (orderThing!==undefined) {
@@ -88,6 +90,12 @@ function App() {
         let objectForSum:IGoods | undefined = goods.find ((good) => good.id == sumOfMoneyArray[i][0])
         result+= (objectForSum!.price * (sumOfMoneyArray[i])[1])
       }
+
+      let goodsCounter = 0
+      for (let j=0; j<sumOfMoneyArray.length; j++) {
+        goodsCounter += sumOfMoneyArray[j][1]
+      }
+      setcountGoodsInBasket(goodsCounter)
     return result  
   }, [sumOfMoneyArray])
 
@@ -129,7 +137,8 @@ function App() {
         <Header 
             finalPrice={finalPrice}
             productTypeValue={productType}
-            onProductTypeChange={setProductType}        
+            onProductTypeChange={setProductType}
+            countGoodsInBasket={countGoodsInBasket}        
         />
         <Breadcrumbs goods={goods} />
       </div>

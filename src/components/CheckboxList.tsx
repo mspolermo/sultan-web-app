@@ -6,11 +6,12 @@ interface CheckboxListProps {
     value: any;
     filtredGoodsList: IGoods[];
     onClick?: any;
+    className?: string;
 }
 
 let boxesArray:any = []
 
-const CheckboxList:FC<CheckboxListProps> = ({value, filtredGoodsList, onClick}) => {
+const CheckboxList:FC<CheckboxListProps> = ({value, filtredGoodsList, onClick, className}) => {
 
     let producersArray:any[] = filtredGoodsList.map( good => good.producer);
     producersArray = producersArray.reduce((acc, i) => {
@@ -34,7 +35,7 @@ const CheckboxList:FC<CheckboxListProps> = ({value, filtredGoodsList, onClick}) 
         if (!buttonChecker) {
             setButtonName('Скрыть')
         } else {
-            setButtonName('Показать все')
+            setButtonName('Показать все ')
         }
     }
 
@@ -47,9 +48,13 @@ const CheckboxList:FC<CheckboxListProps> = ({value, filtredGoodsList, onClick}) 
                     onClick = {onClick}
                     buttonChecker={buttonChecker}
                     checkboxClassnameCount = {checkboxClassnameCount++}
+                    className={className}
                 />)
             }
-            <button onClick={clickHandler}>{buttonName}</button>
+            <button onClick={clickHandler} className={className + 'hidden-btn'}>
+                {buttonName}
+               
+            </button>
         </div>
     );
 };

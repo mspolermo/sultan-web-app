@@ -7,18 +7,19 @@ interface MyCheckboxProps {
     onClick?: any;
     checkboxClassnameCount: number;
     buttonChecker: boolean;
+    className?: string;
 };
 
-const MyCheckbox:FC<MyCheckboxProps> = ({producer, onClick, checkboxClassnameCount, buttonChecker}) => {
+const MyCheckbox:FC<MyCheckboxProps> = ({producer, onClick, checkboxClassnameCount, buttonChecker, className}) => {
     let checkboxClassName: string;
 
     if (checkboxClassnameCount > 4) {
-        checkboxClassName = 'checkbox_hidden'
+        checkboxClassName = className + 'checkbox_hidden'
     } else {
-        checkboxClassName = 'checkbox'
+        checkboxClassName = className + 'checkbox'
     }
     if (buttonChecker) {
-        checkboxClassName = 'checkbox'
+        checkboxClassName = className + 'checkbox'
     }
 
     
@@ -41,9 +42,10 @@ const MyCheckbox:FC<MyCheckboxProps> = ({producer, onClick, checkboxClassnameCou
                 type="checkbox" 
                 name={producerName}
                 onClick={ (event) => clickHandler()}
-                
+                className={className + 'box'}
             />
-            <label htmlFor={producerName}>{producerName} ({producer[1]})</label>
+            <label htmlFor={producerName} className={className + 'producer'}>{producerName} </label>
+            <label htmlFor={producerName} className={className + 'count'}>({producer[1]})</label>
         </div>
     );
 };

@@ -17,12 +17,12 @@ const GoodsItem: FC<GoodsItemProps> = ({good, goods, productTypeValue, onProduct
     function addOrder(e:any, good:IGoods) {
         e.stopPropagation();
         onProductTypeChange?.((good.id).toString())
-        console.log(good.id)
+        // console.log(good.id)
     }
 
-    console.log(good.id - 1)
+    // console.log(good.id - 1)
     let index = goods?.findIndex ((find) => find.id == good.id)
-    console.log(index)
+    // console.log(index)
 
     return (
         <div 
