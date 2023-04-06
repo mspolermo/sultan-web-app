@@ -8,10 +8,10 @@ interface GoodsItemProps {
     good: IGoods;
     productTypeValue?: string;
     onProductTypeChange?: (newType: string) => void;
-    goods?: IGoods[];
+    goodsWithoutFilters?: IGoods[];
 };
 
-const GoodsItem: FC<GoodsItemProps> = ({good, goods, productTypeValue, onProductTypeChange}) => {
+const GoodsItem: FC<GoodsItemProps> = ({good, goodsWithoutFilters, productTypeValue, onProductTypeChange}) => {
     const navigate = useNavigate();
 
     function addOrder(e:any, good:IGoods) {
@@ -21,7 +21,11 @@ const GoodsItem: FC<GoodsItemProps> = ({good, goods, productTypeValue, onProduct
     }
 
     // console.log(good.id - 1)
-    let index = goods?.findIndex ((find) => find.id == good.id)
+    //let index = good.id - 1
+
+    //let index = goods?.findIndex ((find) => find.id == good.id)
+    let index = goodsWithoutFilters?.findIndex ((find) => find.id == good.id)
+    // console.log(goodsWithoutFilters)
     // console.log(index)
 
     return (

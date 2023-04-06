@@ -18,6 +18,8 @@ interface ProductCardProps {
 }
 
 const ProductCard: FC<ProductCardProps> = ({goods, productTypeValue, onProductTypeChange}) => {
+    
+    
     const params = useParams<ProductCardParams>();
     const navigate = useNavigate();
   
@@ -30,6 +32,8 @@ const ProductCard: FC<ProductCardProps> = ({goods, productTypeValue, onProductTy
             //добавил setProductType(undefined)
             setProductType(undefined)}
       }, [productType]);
+
+    //console.log(params)
 
 
     return (

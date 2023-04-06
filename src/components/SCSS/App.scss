@@ -186,6 +186,9 @@ body {
         color: #111111;
     }
 }
+.header-mobile {
+    display: none;
+}
 .breadcrumbs {
     padding: 45px 0 65px;
     &__block {
@@ -1197,6 +1200,32 @@ body {
             margin: auto;
         }
     }
+    .header-mobile {
+        display: block;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgb(208, 212, 216);
+        &__container {
+            display: flex;
+            justify-content: space-around;
+        }
+        &__btn {
+            padding-top: 20px;
+            min-width: 150px;
+            display: flex;
+            align-items: center;
+        }
+        &__btn-logo {
+            margin-right: 20px;
+            width: 40px;
+            height: 40px;
+        }
+        &__btn-name {
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 15px;
+            color: #3F4E65;
+        }
+    }
     .nav-top {
         display: none;
     }
@@ -1225,6 +1254,26 @@ body {
     }
 }
 @media (max-width: 768px) {
+    .header-mobile {
+        padding-bottom: 15px;
+        &__container {
+            justify-content: space-around;
+        }
+        &__btn {
+            padding-top: 15px;
+            min-width: 150px;
+            display: flex;
+            align-items: center;
+        }
+        &__btn-logo {
+            margin-right: 10px;
+            width: 30px;
+            height: 30px;
+        }
+        &__btn-name {
+            font-size: 24px;
+        }
+    }
     .catalog-head {
         &__container {
             flex-direction: column;
@@ -1381,6 +1430,27 @@ body {
         }
         &__logo {
             width: 88px;
+        }
+    }
+    .header-mobile {
+        padding-bottom: 12px;
+        &__container {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        &__btn {
+            padding-top: 13px;
+            min-width: 50px;
+            display: flex;
+            align-items: center;
+        }
+        &__btn-logo {
+            margin-right: 6px;
+            width: 14px;
+            height: 14px;
+        }
+        &__btn-name {
+            font-size: 14px;
         }
     }
     .catalog-head__heading {

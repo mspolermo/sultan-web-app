@@ -17,7 +17,7 @@ const ProductItem: FC<ProductItemProps> = ({good, goods, productTypeValue, onPro
     function addOrder(e:any, good:IGoods) {
         e.stopPropagation();
         onProductTypeChange?.((good.id).toString())
-        console.log(good.id)
+        //console.log(good.id)
     }
 
     // console.log(good.id - 1)

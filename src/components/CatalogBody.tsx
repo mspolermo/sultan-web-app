@@ -236,7 +236,8 @@ const CatalogBody: FC<CatalogBodyProps> = ({goods, productTypeValue, onProductTy
                     </div>   
                 </div>
                 <GoodsList 
-                    goods={pagingPage} 
+                    goods={pagingPage}
+                    goodsWithoutFilters={goods} 
                     productTypeValue={productType}
                     onProductTypeChange={setProductType}
                 />

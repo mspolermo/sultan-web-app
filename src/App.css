@@ -353,6 +353,10 @@ body {
   color: #111111;
 }
 
+.header-mobile {
+  display: none;
+}
+
 .breadcrumbs {
   padding: 45px 0 65px;
 }
@@ -1496,6 +1500,39 @@ body {
   .header-down__logo {
     margin: auto;
   }
+  .header-mobile {
+    display: block;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(208, 212, 216);
+  }
+  .header-mobile__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .header-mobile__btn {
+    padding-top: 20px;
+    min-width: 150px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header-mobile__btn-logo {
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+  .header-mobile__btn-name {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 15px;
+    color: #3F4E65;
+  }
   .nav-top {
     display: none;
   }
@@ -1519,6 +1556,31 @@ body {
   }
 }
 @media (max-width: 768px) {
+  .header-mobile {
+    padding-bottom: 15px;
+  }
+  .header-mobile__container {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .header-mobile__btn {
+    padding-top: 15px;
+    min-width: 150px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header-mobile__btn-logo {
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+  }
+  .header-mobile__btn-name {
+    font-size: 24px;
+  }
   .catalog-head__container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1691,6 +1753,35 @@ body {
   }
   .header-down__logo {
     width: 88px;
+  }
+  .header-mobile {
+    padding-bottom: 12px;
+  }
+  .header-mobile__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .header-mobile__btn {
+    padding-top: 13px;
+    min-width: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header-mobile__btn-logo {
+    margin-right: 6px;
+    width: 14px;
+    height: 14px;
+  }
+  .header-mobile__btn-name {
+    font-size: 14px;
   }
   .catalog-head__heading {
     font-size: 22px;

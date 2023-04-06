@@ -30,7 +30,7 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({goods}) => {
                                 ? ('Корзина')
                                 : (crumb.toString() == 'admin')
                                     ? ('Страница администрирования сайта')
-                                    : (crumb.toString())
+                                    : (goods[crumb.toString()].title)
                     }
                         </div>
                     </Link>
@@ -38,7 +38,8 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({goods}) => {
             )
 
         })
- //goods[crumb.toString()].title)
+//(crumb.toString())
+ //(goods[crumb.toString()].title)
     return (
         <div className="breadcrumbs">
             <div className="container breadcrumbs__container">
