@@ -27,8 +27,8 @@ const AdminList: FC<AdminListProps> = ({products, onRemove, onEdit}) => {
     
 
     return (
-        <div>
-            <h1>Список товаров:</h1>
+        <div className="admin-list">
+            <h1 className="admin-list__head">Список товаров:</h1>
             {products.map( product => 
               <AdminItem
                 key={product.id} 

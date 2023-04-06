@@ -115,9 +115,12 @@ const AdminPage: FC<AdminPageProps> =({onGoodsUpdate, JSONfile}) => {
 
     
     return (
-        <div>
-            <button onClick={handleFormJson}>Загрузить список из JSON-файла</button>
-            <AddNewProduct create={createProduct}/>
+        <div className="container">
+            <h2 className="admin-page__head">Страница администрирования сайта "Султан"</h2>
+            <div className="admin-page__block">
+                <AddNewProduct create={createProduct}/>
+                <button className="admin-page__btn" onClick={handleFormJson}>Загрузить список из JSON-файла</button>
+            </div>
             <AdminList products={products} onRemove={setRemoveThing} onEdit={setEditThing}/>
         </div>
     )

@@ -101,26 +101,49 @@ const AdminItem: FC<AdminItemProps> = ({product, onRemove, onEdit}) => {
     
 
     return (
-        <div style={{display: 'flex', flexDirection: 'column'}}>
-            <div style={{display: 'flex', margin: '10px 10px', padding: '0 10px', border: '2px solid black'}}>
-                <div>
-                    <p>ID#{product.id}. Название: {product.title}</p>
-                    <p>Описание: {product.desription}</p>
-                    <p>Прооизводитель: {product.producer}. Бренд: {product.brand}</p>
-                    <p>Тип размера: {product.sizeType}. Размер: {product.size}</p>
-                    <p>Штрихкод: {product.barcode}. Цена: {product.price} ₸</p>
+        <div className='admin-list__body'>
+            <div className='admin-list__item'>
+                <div className='admin-list__info'>
+                    <div className='admin-list__line'>
+                        <span className='admin-list__text admin-list__text_bold'>ID#</span>
+                        <span className='admin-list__text'>{product.id}</span>
+                        <span className='admin-list__text admin-list__text_bold'> Название: </span>
+                        <span className='admin-list__text'>{product.title}</span>
+                    </div>
+                    <div className='admin-list__line'>
+                        <span className='admin-list__text admin-list__text_bold'>Описание: </span>
+                        <span className='admin-list__text'>{product.desription}</span>   
+                    </div>
+                    <div className='admin-list__line'>
+                        <span className='admin-list__text admin-list__text_bold'>Прооизводитель: </span>
+                        <span className='admin-list__text'>{product.producer} </span>
+                        <span className='admin-list__text admin-list__text_bold'> Бренд: </span>
+                        <span className='admin-list__text'>{product.brand}</span>
+                    </div>
+                    <div className='admin-list__line'>
+                        <span className='admin-list__text admin-list__text_bold'>Тип размера: </span>
+                        <span className='admin-list__text'>{product.sizeType} </span>
+                        <span className='admin-list__text admin-list__text_bold'> Размер: </span>
+                        <span className='admin-list__text'>{product.size}</span>
+                    </div>
+                    <div className='admin-list__line'>
+                        <span className='admin-list__text admin-list__text_bold'>Штрихкод: </span>
+                        <span className='admin-list__text'>{product.barcode} </span>
+                        <span className='admin-list__text admin-list__text_bold'> Цена: </span>
+                        <span className='admin-list__text'>{product.price}</span>
+                    </div>
                 </div>
-                <div style={{width: 200, borderLeft: ' 2px solid black', borderRight: ' 2px solid black', padding: '0 10px'}}>
-                    <p>Тип ухода:</p>
+                <div className='admin-list__careType'>
+                    <p className='admin-list__text admin-list__text_bold'>Тип ухода:</p>
                     {product.careType.map( type => 
-                        <span key={type}>{type}, </span>)}
+                        <span className='admin-list__text' key={type}>{type}, </span>)}
                 </div>
-                <div style={{borderRight: ' 2px solid black'}}>
-                    <img src={product.image} alt={product.image} height={150}/>
+                <div className='admin-list__img-block'>
+                    <img className='admin-list__img' src={product.image} alt={product.image} height={150}/>
                 </div>
-                <div>
-                    <button onClick={removing}>Удалить</button>
-                    <button onClick={editing}>Редактировать</button>
+                <div className='admin-list__block-btns'>
+                    <button onClick={removing} className='admin-list__btn'>Удалить</button>
+                    <button onClick={editing} className='admin-list__btn'>Редактировать</button>
                 </div>
             </div>
             {editValue && <div>НАЧИНАЕМ РЕДАКТИРОВАТЬ

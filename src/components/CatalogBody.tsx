@@ -244,13 +244,11 @@ const CatalogBody: FC<CatalogBodyProps> = ({goods, productTypeValue, onProductTy
             </div>
         </div>
             <div className="pagination">
-                <div className="container pagination__container">
                     {pagesArray.map( p =>
                         <span className="pagination__number"
                             key={p}
                             onClick={() => setPageNumber(p)}
                         >{p}</span>)}
-                </div>    
             </div>
       </div>
     );

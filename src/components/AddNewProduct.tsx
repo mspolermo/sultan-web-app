@@ -84,42 +84,73 @@ const AddNewProduct: FC<AddNewProductProps> =({create}) => {
     }
 
     return (
-        <div style={{display: 'flex', flexDirection: 'column', maxWidth: '300px'}}>
-            <MyInput value={title} onChange={titleChanger} placeholder = "Title" />
-            <MyInput value={imgURL} onChange={imgURLChanger} placeholder = "ImageURL" />
-            <MySelect
-                        value={sizeType}
-                        onChange={sizeTypeChanger}
-                        defaultValue='Тип размера'
-                        options={[
-                            {value: 'weight', name: 'Вес (гр)'},
-                            {value: 'volume', name: 'Объем (мл)'}
-                        ]}
-            />
-            <MyInput value={size} type={'number'} onChange={sizeChanger} placeholder = 'Размер' />
-            <MyInput value={barcode} type={'number'} onChange={barcodeChanger} placeholder = 'Штрихкод' />
-            <MyInput value={producer} onChange={producerChanger} placeholder = 'Производитель' />
-            <MyInput value={brand} onChange={brandChanger} placeholder = 'Бренд' />
-            <MyInput value={desription} onChange={desriptionChanger} placeholder = 'Описание' />
-            <MyInput value={price} type={'number'} onChange={priceChanger} placeholder = 'Цена' />
-            <div>Укажите тип товара:
-                <div>
-                    <CaretypeCheckbox name='Уход за телом' value='body' onClick={careTypeChanger} /> 
-                    <CaretypeCheckbox name='Уход за руками' value='hands' onClick={careTypeChanger} />
-                    <CaretypeCheckbox name='Уход за ногами' value='legs' onClick={careTypeChanger} />  
-                    <CaretypeCheckbox name='Уход за лицом' value='face' onClick={careTypeChanger} />
-                    <CaretypeCheckbox name='Уход за волосами' value='hair' onClick={careTypeChanger} /> 
-                    <CaretypeCheckbox name='Средства для загара' value='sun' onClick={careTypeChanger} />
-                    <CaretypeCheckbox name='Средства для бритья' value='shaving' onClick={careTypeChanger} />  
-                    <CaretypeCheckbox name='Подарочные наборы' value='present' onClick={careTypeChanger} />
-                    <CaretypeCheckbox name='Гигиеническая продукция' value='hygienic' onClick={careTypeChanger} />
-                    <CaretypeCheckbox name='Гигиена полости рта' value='mouth' onClick={careTypeChanger} /> 
-                    <CaretypeCheckbox name='Бумажная продукция' value='paper' onClick={careTypeChanger} />                  
+        <div className="admin-form">
+            <div className="admin-form__body ">
+                <div className="admin-form__block">
+                    <p className="admin-form__field-name">Название</p>
+                    <MyInput value={title} onChange={titleChanger} placeholder = "Title" />    
                 </div>
+                <div className="admin-form__block">
+                    <p className="admin-form__field-name">Ссылка на картинку</p>    
+                    <MyInput value={imgURL} onChange={imgURLChanger} placeholder = "ImageURL" />
+                </div>
+                <div className="admin-form__block">
+                    <MySelect
+                                value={sizeType}
+                                onChange={sizeTypeChanger}
+                                defaultValue='Тип размера'
+                                options={[
+                                    {value: 'weight', name: 'Вес (гр)'},
+                                    {value: 'volume', name: 'Объем (мл)'}
+                                ]}
+                    />
+                </div>
+                <div className="admin-form__block">
+                    <p className="admin-form__field-name">Размер</p>
+                    <MyInput value={size} type={'number'} onChange={sizeChanger} placeholder = 'Размер' />
+                </div>
+                <div className="admin-form__block">
+                    <p className="admin-form__field-name">Штрихкод</p>
+                    <MyInput value={barcode} type={'number'} onChange={barcodeChanger} placeholder = 'Штрихкод' />
+                </div>
+                <div className="admin-form__block">
+                    <p className="admin-form__field-name">Производитель</p>
+                    <MyInput value={producer} onChange={producerChanger} placeholder = 'Производитель' />
+                </div>
+                <div className="admin-form__block">
+                    <p className="admin-form__field-name">Бренд</p>
+                    <MyInput value={brand} onChange={brandChanger} placeholder = 'Бренд' />
+                </div>
+                <div className="admin-form__block">
+                    <p className="admin-form__field-name">Описание</p>
+                    <MyInput value={desription} onChange={desriptionChanger} placeholder = 'Описание' />
+                </div>
+                <div className="admin-form__block">
+                    <p className="admin-form__field-name">Цена</p>
+                    <MyInput value={price} type={'number'} onChange={priceChanger} placeholder = 'Цена' />
+                </div>
+                <div className="admin-form__block">Укажите тип использования товара:</div>
+                <div className="admin-form__block-checkboxes">
+                    <div className="admin-form__checkbox-list">
+                        <CaretypeCheckbox name='Уход за телом' value='body' onClick={careTypeChanger} /> 
+                        <CaretypeCheckbox name='Уход за руками' value='hands' onClick={careTypeChanger} />
+                        <CaretypeCheckbox name='Уход за ногами' value='legs' onClick={careTypeChanger} />  
+                        <CaretypeCheckbox name='Уход за лицом' value='face' onClick={careTypeChanger} />
+                        <CaretypeCheckbox name='Уход за волосами' value='hair' onClick={careTypeChanger} />
+                    </div>      
+                    <div className="admin-form__checkbox-list">   
+                        <CaretypeCheckbox name='Средства для загара' value='sun' onClick={careTypeChanger} />
+                        <CaretypeCheckbox name='Средства для бритья' value='shaving' onClick={careTypeChanger} />  
+                        <CaretypeCheckbox name='Подарочные наборы' value='present' onClick={careTypeChanger} />
+                        <CaretypeCheckbox name='Гигиеническая продукция' value='hygienic' onClick={careTypeChanger} />
+                        <CaretypeCheckbox name='Гигиена полости рта' value='mouth' onClick={careTypeChanger} /> 
+                        <CaretypeCheckbox name='Бумажная продукция' value='paper' onClick={careTypeChanger} />                  
+                    </div>
 
+                </div>
+                <button onClick={createProduct}>Добавить позицию</button>
             </div>
-            <button onClick={createProduct}>Добавить позицию</button>
-        </div>
+        </div>               
     )
 }
 
