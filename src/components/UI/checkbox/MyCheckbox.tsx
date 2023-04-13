@@ -40,7 +40,7 @@ const MyCheckbox:FC<MyCheckboxProps> = ({producer, onClick, checkboxClassnameCou
         <div className={checkboxClassName}>
             <input 
                 type="checkbox" 
-                name={producerName}
+                title={producerName}
                 onClick={ (event) => clickHandler()}
                 className={className + 'box'}
             />

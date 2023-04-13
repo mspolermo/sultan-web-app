@@ -642,7 +642,7 @@ body {
 .product {
     &__container {
         display: flex;
-        min-height: 1200px;
+        min-height: 1300px;
     }
     &__left {
         margin-right: 40px;
@@ -797,7 +797,7 @@ body {
     &__list {
         display: flex;
         flex-direction: column;
-        min-height: 700px;
+        min-height: 1000px;
     }
     &__item {
         display: flex;

@@ -1,5 +1,4 @@
 import React, {FC, useEffect, useState} from "react";
-//import goods from '../goods/goods.json'
 import '../App.css'
 import GoodsItem from "../components/GoodsItem";
 import { useNavigate, useParams } from "react-router-dom";
@@ -37,7 +36,7 @@ const ProductCard: FC<ProductCardProps> = ({goods, productTypeValue, onProductTy
 
 
     return (
-        <div>
+        <div data-testid="productCard-page">
             {/* <button onClick={() => {navigate('/')}}>Назад</button> */}
             <ProductItem
                 good={goods[Number(params.id)]}

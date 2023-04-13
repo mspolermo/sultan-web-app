@@ -865,7 +865,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  min-height: 1200px;
+  min-height: 1300px;
 }
 .product__left {
   margin-right: 40px;
@@ -1044,7 +1044,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 700px;
+  min-height: 1000px;
 }
 .basket__item {
   display: -webkit-box;

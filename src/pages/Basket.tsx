@@ -85,12 +85,12 @@ const Basket: FC<BasketProps> = ({orderList, onOrderThingChange, onRemove, final
                     )}
                 </div>
                 <div className="basket__summary">
-                    <button onClick={offer} className="basket__btn_order">Оформить заказ</button>
-                    <p className="basket__price basket__price_final">{finalPrice} ₸</p>   
+                    <button data-testid='order-element' onClick={offer} className="basket__btn_order">Оформить заказ</button>
+                    <p data-testid='price-element' className="basket__price basket__price_final">{finalPrice} ₸</p>   
                 </div>
             </div>
             <div className={openMessage}>
-                <button className="basket__close" onClick={closing}>x</button>
+                <button data-testid='close-element' className="basket__close" onClick={closing}>x</button>
                 <svg width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="59" height="59" rx="29.5" fill="#FFC85E"/><path d="M19.5 29.5L24.75 34.5L27.375 31.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M25.5 29.5L30.75 34.5L39.5 24.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M33.5 24.5L30 28.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 <h2 className="basket__head">Спасибо за заказ</h2>
                 <p className="basket__text-message">Наш менеджер свяжется с вами в ближайшее время</p>

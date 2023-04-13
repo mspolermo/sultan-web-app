@@ -244,7 +244,7 @@ const CatalogBody: FC<CatalogBodyProps> = ({goods, productTypeValue, onProductTy
             </div>
                 <div className="pagination">
                         {pagesArray.map( p =>
-                            <span className="pagination__number"
+                            <span data-testid='pagination-elem' className="pagination__number"
                                 key={p}
                                 onClick={() => setPageNumber(p)}
                             >{p}</span>)}
