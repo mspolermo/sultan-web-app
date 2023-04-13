@@ -1,28 +1,23 @@
-import React, {FC, useState} from "react";
+import React, {FC} from "react";
 import { IGoods } from "../types/types";
-import '../App.css'
 import { useNavigate } from "react-router-dom";
 
 
 interface ProductItemProps {
     good: IGoods;
-    productTypeValue?: string;
     onProductTypeChange?: (newType: string) => void;
     goods?: IGoods[];
 };
 
-const ProductItem: FC<ProductItemProps> = ({good, goods, productTypeValue, onProductTypeChange}) => {
+const ProductItem: FC<ProductItemProps> = ({good, goods, onProductTypeChange}) => {
     const navigate = useNavigate();
 
     function addOrder(e:any, good:IGoods) {
         e.stopPropagation();
         onProductTypeChange?.((good.id).toString())
-        //console.log(good.id)
     }
 
-    // console.log(good.id - 1)
     let index = goods?.findIndex ((find) => find.id == good.id)
-    // console.log(index)
 
     return (
         <div 
@@ -118,7 +113,7 @@ const ProductItem: FC<ProductItemProps> = ({good, goods, productTypeValue, onPro
                 </div>
             </div>
       </div>
-    )
-}
+    );
+};
 
 export default ProductItem;

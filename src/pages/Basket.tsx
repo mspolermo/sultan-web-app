@@ -1,5 +1,4 @@
-import React, {FC, useEffect, useMemo, useState} from "react";
-import '../App.css'
+import React, {FC, useEffect, useState} from "react";
 import BasketItem from "../components/BasketItem";
 import { IBasketGoods, IGoods } from "../types/types";
 
@@ -15,11 +14,10 @@ interface BasketProps{
 const Basket: FC<BasketProps> = ({orderList, onOrderThingChange, onRemove, finalPrice, basketThingsArray, onOffer}) => {
 
     const [basketArray, setBasketArray] = useState<any>();
-    // console.log(basketArray)
 
     const basketChanger = useEffect( () => {
-        basketThingsArray.sort((a: Array<number>, b: Array<number>) => a[0] - b[0])
-        orderList.sort((a:IGoods, b:IGoods) => a.id - b.id )
+        basketThingsArray.sort((a: Array<number>, b: Array<number>) => a[0] - b[0]);
+        orderList.sort((a:IGoods, b:IGoods) => a.id - b.id );
 
         let newArray = [];
         
@@ -39,35 +37,32 @@ const Basket: FC<BasketProps> = ({orderList, onOrderThingChange, onRemove, final
                 basketCount: (basketThingsArray[i])[1]
             })
         }
-        setBasketArray(newArray)
-    },[basketThingsArray])
-
+        setBasketArray(newArray);
+    },[basketThingsArray]);
 
     const [total, setTotal] = useState<undefined | Array<number>>();
     useEffect( () => {
         if (total) {
-        onOrderThingChange?.(total)
-        } 
-    }, [total])
+        onOrderThingChange?.(total);
+        }; 
+    }, [total]);
 
     const [removeThing, setRemoveThing] = useState<undefined | IGoods>();
     useEffect( () => {
         if (removeThing) {
             onRemove?.(removeThing)
-            //console.log(removeThing)
         }
-    }, [removeThing])
+    }, [removeThing]);
 
     const [openMessage, setOpenMessage] = useState('basket__mesasge_hidden');
     const offer = () => {
-        setOpenMessage('basket__mesasge')
-        
-    }
+        setOpenMessage('basket__mesasge');
+    };
     const closing = () => {
-        setOpenMessage('basket__mesasge_hidden')
-        setBasketArray([])
-        onOffer?.([])
-    }
+        setOpenMessage('basket__mesasge_hidden');
+        setBasketArray([]);
+        onOffer?.([]);
+    };
 
     return (
         <div data-testid="basket-page" className='basket'>

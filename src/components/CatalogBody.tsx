@@ -1,6 +1,5 @@
 import React, {FC, useEffect, useMemo, useState} from "react";
 import GoodsList from './GoodsList';
-import '../App.css'
 import MySelect from "./UI/select/MySelect";
 import FilterButton from "./UI/button/FilterButton";
 import { IGoods } from "../types/types";
@@ -9,12 +8,11 @@ import CheckboxList from "./CheckboxList";
 
 interface CatalogBodyProps {
     goods: IGoods[];
-    productTypeValue?: string;
     onProductTypeChange?: (newType: string) => void;
 };
 
-const CatalogBody: FC<CatalogBodyProps> = ({goods, productTypeValue, onProductTypeChange}) => {
-    const [products, setProducts] = useState(goods)
+const CatalogBody: FC<CatalogBodyProps> = ({goods, onProductTypeChange}) => {
+    const [products, setProducts] = useState(goods);
 
     //BasketLogic
     const [productType, setProductType] = useState<undefined | string>('');
@@ -25,13 +23,12 @@ const CatalogBody: FC<CatalogBodyProps> = ({goods, productTypeValue, onProductTy
         }
       }, [productType]);
 
-        //Sorting logic
-        
-    const [selectedSort, setSelectedSort] = useState('')
+        //Sorting logic   
+    const [selectedSort, setSelectedSort] = useState('');
     const sortGoods = (sort:string) => {
         setSelectedSort(sort);
         setPageNumber(1);
-    }
+    };
     const sortedGoods:any = useMemo( () => {
         if (!selectedSort) {
             return products
@@ -46,13 +43,13 @@ const CatalogBody: FC<CatalogBodyProps> = ({goods, productTypeValue, onProductTy
         } else if ((typeOfSort[0] == 'price') && (typeOfSort.length == 2)) {
             return [...products].sort((a, b) =>  +b[typeOfSort[0] as keyof typeof b] - +a[typeOfSort[0] as keyof typeof a])
         }
-    }, [selectedSort, products])
+    }, [selectedSort, products]);
 
-    const [selectedFilter, setSelectedFilter] = useState()
+    const [selectedFilter, setSelectedFilter] = useState();
     const filerGoods = (filter: any) => {
         setSelectedFilter(filter);
         setPageNumber(1);
-    }
+    };
     const sortedAndFiltredGoods:any = useMemo( () => {
         if(!selectedFilter) {
             return sortedGoods
@@ -61,43 +58,43 @@ const CatalogBody: FC<CatalogBodyProps> = ({goods, productTypeValue, onProductTy
         let typeOfFilterValue = typeOfFilter.careType
         return sortedGoods.filter( (product:IGoods) => product.careType.includes(typeOfFilterValue)
         )
-    }, [selectedFilter, sortedGoods])
+    }, [selectedFilter, sortedGoods]);
 
-    const [searchProdicerQuery, setSearchProdicerQuery] = useState('')
+    const [searchProdicerQuery, setSearchProdicerQuery] = useState('');
     const queryGoods = (sort:string) => {
         setSearchProdicerQuery(sort);
         setPageNumber(1);
-    }
+    };
     const sortedFiltreadSearchedGoods = useMemo(() => {
         return sortedAndFiltredGoods.filter( (product:IGoods) => product.producer.toLowerCase().includes(searchProdicerQuery.toLowerCase())) 
-    }, [searchProdicerQuery, sortedAndFiltredGoods])
+    }, [searchProdicerQuery, sortedAndFiltredGoods]);
     
-    const [minPrice, setMinPrice] = useState('')
+    const [minPrice, setMinPrice] = useState('');
     const minPricing = (sort:string) => {
         setMinPrice(sort);
         setPageNumber(1);
-    }
+    };
     const sortedFiltreadSearchedMinGoods = useMemo(() => {
         return sortedFiltreadSearchedGoods.filter( (product:IGoods) => product.price > +minPrice) 
-    }, [minPrice, sortedFiltreadSearchedGoods])
+    }, [minPrice, sortedFiltreadSearchedGoods]);
 
-    const [maxPrice, setMaxPrice] = useState('')
+    const [maxPrice, setMaxPrice] = useState('');
     const maxPricing = (sort:string) => {
         setMaxPrice(sort);
         setPageNumber(1);
-    }
+    };
     const sortedFiltreadSearchedPriceGoods = useMemo(() => {
         if (maxPrice !== '') {
             return sortedFiltreadSearchedMinGoods.filter( (product:IGoods) => product.price < +maxPrice)
         }
         return sortedFiltreadSearchedMinGoods
-    }, [maxPrice, sortedFiltreadSearchedMinGoods])
+    }, [maxPrice, sortedFiltreadSearchedMinGoods]);
 
-    const [checkbox, setCheckbox] = useState()
+    const [checkbox, setCheckbox] = useState();
     const checkboxing = (sort:any) => {
         setCheckbox(sort);
         setPageNumber(1);
-    }
+    };
     const [checkboxArray, setCheckboxArray] = useState([]);  
     const checkboxArraySost = useMemo( () => {
         if (!checkbox) return
@@ -106,7 +103,7 @@ const CatalogBody: FC<CatalogBodyProps> = ({goods, productTypeValue, onProductTy
         }else if (checkbox[0] == 'remove'){
             setCheckboxArray(checkboxArray.filter( (producer: string) => producer !== checkbox[1]))
         } 
-    }, [checkbox])
+    }, [checkbox]);
     const finalFiltredGoods:any = useMemo( () => {
         if(!checkbox) {
             return sortedFiltreadSearchedPriceGoods
@@ -121,11 +118,10 @@ const CatalogBody: FC<CatalogBodyProps> = ({goods, productTypeValue, onProductTy
         }
         return goodsByCheckboxArray
 
-    }, [checkboxArray, sortedFiltreadSearchedPriceGoods])
+    }, [checkboxArray, sortedFiltreadSearchedPriceGoods]);
 
         //Pagination
-
-    const [pageNumber, setPageNumber] = useState (1)
+    const [pageNumber, setPageNumber] = useState (1);
     const pagesArray = useMemo( () => {
         let totalPages = Math.ceil(finalFiltredGoods.length/ 10)
 
@@ -134,7 +130,7 @@ const CatalogBody: FC<CatalogBodyProps> = ({goods, productTypeValue, onProductTy
             pagesArray.push(i+1)
         } 
         return pagesArray
-    }, [finalFiltredGoods])
+    }, [finalFiltredGoods]);
     const pagingPage = useMemo( () => {
         let choosenPage =  pagesArray.indexOf(pageNumber, 0);
         if (choosenPage + 1 == pagesArray.length) {
@@ -142,7 +138,7 @@ const CatalogBody: FC<CatalogBodyProps> = ({goods, productTypeValue, onProductTy
         } else {
             return finalFiltredGoods.slice((choosenPage*10), (choosenPage*10 + 10))
         }
-    }, [pageNumber, finalFiltredGoods])
+    }, [pageNumber, finalFiltredGoods]);
 
     return (
         <div>
@@ -235,8 +231,7 @@ const CatalogBody: FC<CatalogBodyProps> = ({goods, productTypeValue, onProductTy
                     </div>
                     <GoodsList 
                         goods={pagingPage}
-                        goodsWithoutFilters={goods} 
-                        productTypeValue={productType}
+                        goodsWithoutFilters={goods}
                         onProductTypeChange={setProductType}
                     />
                     

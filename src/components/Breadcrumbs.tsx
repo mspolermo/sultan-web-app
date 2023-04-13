@@ -2,7 +2,6 @@ import React, {FC} from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { IGoods } from "../types/types";
-import '../App.css'
 
 interface BreadcrumbsProps {
     goods: IGoods []
@@ -14,7 +13,6 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({goods}) => {
 
     let currentLink:any = []
     const crumbs = location.pathname.split('/')
-       
         .filter(crumb => crumb !== '')
         .map ( (crumb:any ) => {
             currentLink.push(`/${crumb}`)
@@ -36,8 +34,12 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({goods}) => {
                 </div>
             )
         })
+
+//Для вывода имени товара вместо id, нужно заменить строки 
+//(это работает в лайфсервере, но ложит прод)        
 //(crumb.toString())
- //(goods[crumb.toString()].title)
+//(goods[crumb.toString()].title)
+
     return (
         <div className="breadcrumbs" data-testid="breadcrumbs-elem">
             <div className="container breadcrumbs__container">
@@ -47,8 +49,7 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({goods}) => {
                     </div>
                 </Link>
                 {crumbs} 
-            </div>
-            
+            </div>   
         </div>
     )
 }

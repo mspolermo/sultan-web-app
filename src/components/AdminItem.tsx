@@ -13,92 +13,97 @@ interface AdminItemProps {
 const AdminItem: FC<AdminItemProps> = ({product, onRemove, onEdit}) => {
     function removing () {
         onRemove?.(product);
-    }
+    };
 
-    const [editValue, setEditValue] = useState (false)
+    const [editValue, setEditValue] = useState (false);
     function editing () {
-        setEditValue (!editValue)
+        setEditValue (!editValue);
     }
-    
-    // useEffect (() => {
-    //     onEdit?.([editValue, product]);
-    // }, [editValue])
 
-    const [editProduct, setEditProduct] = useState<IGoods | undefined> (undefined)
+    const [editProduct, setEditProduct] = useState<IGoods | undefined> (undefined);
     const editingProduct = (e:any) => {
-        e.preventDefault()
-        setEditProduct({id: id, title: title, image: imgURL, sizeType: sizeType, size: size, barcode: barcode, producer: producer, brand: brand, desription: desription, price: price, careType: careType})
-        setEditValue (!editValue)
-    }
-    //console.log(editProduct)
+        e.preventDefault();
+        setEditProduct({
+            id: id, 
+            title: title, 
+            image: imgURL, 
+            sizeType: sizeType, 
+            size: size, 
+            barcode: barcode, 
+            producer: producer, 
+            brand: brand, 
+            desription: desription, 
+            price: price, 
+            careType: careType
+        });
+        setEditValue (!editValue);
+    };
+
     useEffect (() => {
         if (editProduct !== undefined) {
-            onEdit?.(editProduct)
-            // create({...product})
-        }
-    },[editProduct])
+            onEdit?.(editProduct);
+        };
+    },[editProduct]);
 
     let id = product.id;
 
-    const [title, setTitle] = useState(product.title)
+    const [title, setTitle] = useState(product.title);
     const titleChanger = (value:string) => {
         setTitle(value);
-    }
+    };
 
-    const [imgURL, setimgURL] = useState(product.image)
+    const [imgURL, setimgURL] = useState(product.image);
     const imgURLChanger = (value:string) => {
         setimgURL(value);
-    }
+    };
 
-    const [sizeType, setsizeType] = useState(product.sizeType)
+    const [sizeType, setsizeType] = useState(product.sizeType);
     const sizeTypeChanger = (value:string) => {
         setsizeType(value);
-    }
+    };
 
-    const [size, setSize] = useState(product.size)
+    const [size, setSize] = useState(product.size);
     const sizeChanger = (value:number) => {
         setSize(value);
-    }
+    };
 
-    const [barcode, setBarcode] = useState(product.barcode)
+    const [barcode, setBarcode] = useState(product.barcode);
     const barcodeChanger = (value:number) => {
         setBarcode(value);
-    }
+    };
     
-    const [producer, setProducer] = useState(product.producer)
+    const [producer, setProducer] = useState(product.producer);
     const producerChanger = (value:string) => {
         setProducer(value);
-    }
+    };
 
-    const [brand, setBrand] = useState(product.brand)
+    const [brand, setBrand] = useState(product.brand);
     const brandChanger = (value:string) => {
         setBrand(value);
-    }
+    };
 
-    const [desription, setDesription] = useState(product.desription)
+    const [desription, setDesription] = useState(product.desription);
     const desriptionChanger = (value:string) => {
         setDesription(value);
-    }
+    };
 
-    const [price, setPrice] = useState(product.price)
+    const [price, setPrice] = useState(product.price);
     const priceChanger = (value:number) => {
         setPrice(value);
-    }
+    };
 
-    const [careType, setCareType ] = useState<any>(["requerType"])
+    const [careType, setCareType ] = useState<any>(["requerType"]);
     const careTypeChanger = (value:Array<string>) => {
         if (value[0] == 'add') {
-            let addingType = [...careType, value[1]]
-            setCareType(addingType)
+            let addingType = [...careType, value[1]];
+            setCareType(addingType);
         } else if (value[0] == 'remove') {
-            let removingType = [...careType]
-            let index = removingType.indexOf(value[1], 0)
-            removingType.splice(index, 1)
-            setCareType(removingType)
-        }
-    }
-
-    
+            let removingType = [...careType];
+            let index = removingType.indexOf(value[1], 0);
+            removingType.splice(index, 1);
+            setCareType(removingType);
+        };
+    };
 
     return (
         <div className='admin-list__body'>
@@ -212,15 +217,11 @@ const AdminItem: FC<AdminItemProps> = ({product, onRemove, onEdit}) => {
                                 </div>
                             </div>
                             <button className="admin-edit__btn" onClick={editingProduct}>Сохранить позицию</button>
-                
                         </div>           
                     </div>
-            
-            
-            </div>}
-            
+            </div>} 
         </div>
-    )    
-}
+    );    
+};
 
-export default AdminItem
+export default AdminItem;

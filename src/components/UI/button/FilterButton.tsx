@@ -1,4 +1,3 @@
-import { type } from "os";
 import React, {FC, useState} from "react";
 
 interface FiletrButtonProps {
@@ -23,7 +22,6 @@ const FilterButton: FC<FiletrButtonProps> = ({name, value, onClick, careType, cl
             onClick({careType})
         }
     }
-
 
     return (
         <button className={className}

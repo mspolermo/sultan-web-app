@@ -1,5 +1,5 @@
 import React, {FC, useState} from "react";
-import { IGoods } from "../../../types/types";
+
 
 interface MyCheckboxProps {
     key: string;

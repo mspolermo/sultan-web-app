@@ -9,11 +9,11 @@ interface CheckboxListProps {
     className?: string;
 }
 
-let boxesArray:any = []
 
 const CheckboxList:FC<CheckboxListProps> = ({value, filtredGoodsList, onClick, className}) => {
 
     let producersArray:any[] = filtredGoodsList.map( good => good.producer);
+
     producersArray = producersArray.reduce((acc, i) => {
         if (acc.hasOwnProperty(i)) {
           acc[i] += 1;
@@ -22,6 +22,7 @@ const CheckboxList:FC<CheckboxListProps> = ({value, filtredGoodsList, onClick, c
         }
         return acc;
     }, []);
+
     let recycledproducersArray = [];
     for (var key in producersArray) {
         recycledproducersArray.push([key, producersArray[key]]);
@@ -30,6 +31,7 @@ const CheckboxList:FC<CheckboxListProps> = ({value, filtredGoodsList, onClick, c
     let checkboxClassnameCount = 1;
     const [buttonChecker, setButtonChecker] = useState(false)
     const [buttonName, setButtonName] = useState('Показать все')
+
     function clickHandler() {
         setButtonChecker(!buttonChecker)
         if (!buttonChecker) {
@@ -53,7 +55,6 @@ const CheckboxList:FC<CheckboxListProps> = ({value, filtredGoodsList, onClick, c
             }
             <button onClick={clickHandler} className={className + 'hidden-btn'}>
                 {buttonName}
-               
             </button>
         </div>
     );

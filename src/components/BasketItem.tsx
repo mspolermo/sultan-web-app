@@ -1,32 +1,30 @@
-import React, {FC, useEffect, useMemo, useState} from "react";
+import React, {FC, useEffect, useState} from "react";
 import { IBasketGoods, IGoods } from "../types/types";
 
 interface BasketItemProps {
     order: IBasketGoods;
-    totalValue?: number;
     onTotalChange?: (newTotal: Array<number>) => void;
     onRemove? : (removeItem :IGoods) => void;
 };
 
-
-const BasketItem: FC<BasketItemProps> = ({order, totalValue, onTotalChange, onRemove}) => {
-    const [counter, setCounter] = useState (order.basketCount)
+const BasketItem: FC<BasketItemProps> = ({order, onTotalChange, onRemove}) => {
+    const [counter, setCounter] = useState (order.basketCount);
 
     function upCounter () {
-        setCounter(counter+1)
-    }
+        setCounter(counter+1);
+    };
     function downCounter () {
         if (counter>0) {
-            setCounter(counter-1)   
-    }
-    }
+            setCounter(counter-1);   
+        };
+    };
     useEffect( () => {
-        onTotalChange?.(([order.id ,counter]))
-    }, [counter])
+        onTotalChange?.(([order.id ,counter]));
+    }, [counter]);
 
     function removing () {
         onRemove?.(order);
-    }
+    };
 
     return (
         <div className="basket__item">
@@ -67,6 +65,7 @@ const BasketItem: FC<BasketItemProps> = ({order, totalValue, onTotalChange, onRe
                 </div>  
             </div>        
         </div>
-    )
-}
-export default BasketItem
+    );
+};
+
+export default BasketItem;

@@ -5,13 +5,12 @@ import '../App.css'
 
 interface GoodsListProps {
     goods: IGoods[];
-    goodsWithoutFilters: IGoods [],
-    productTypeValue?: string;
+    goodsWithoutFilters: IGoods [];
     onProductTypeChange?: (newType: string) => void;
 };
 
 
-const GoodsList: FC<GoodsListProps> = ({goods, goodsWithoutFilters, productTypeValue, onProductTypeChange}) => {
+const GoodsList: FC<GoodsListProps> = ({goods, goodsWithoutFilters, onProductTypeChange}) => {
         //BasketLogic
     const [productType, setProductType] = useState<undefined | string>('');
     
@@ -30,7 +29,6 @@ const GoodsList: FC<GoodsListProps> = ({goods, goodsWithoutFilters, productTypeV
                 key={good.id} 
                 good={good}
                 goodsWithoutFilters={goodsWithoutFilters}
-                productTypeValue={productType}
                 onProductTypeChange={setProductType}
                 />
             )}

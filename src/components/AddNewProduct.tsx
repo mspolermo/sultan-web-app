@@ -7,81 +7,90 @@ import MySelect from "./UI/select/MySelect";
 
 interface AddNewProductProps {
     create?: any;
-}
+};
 
 const AddNewProduct: FC<AddNewProductProps> =({create}) => {
 
-    const [product, setProduct] = useState<IGoods | undefined> (undefined)
+    const [product, setProduct] = useState<IGoods | undefined> (undefined);
     const createProduct = (e:any) => {
-        e.preventDefault()
-        setProduct({id: Date.now(), title: title, image: imgURL, sizeType: sizeType, size: size, barcode: barcode, producer: producer, brand: brand, desription: desription, price: price, careType: careType})
-        //console.log(product)
-    }
+        e.preventDefault();
+        setProduct({
+            id: Date.now(), 
+            title: title, 
+            image: imgURL, 
+            sizeType: sizeType, 
+            size: size, 
+            barcode: barcode, 
+            producer: producer, 
+            brand: brand, 
+            desription: desription, 
+            price: price, 
+            careType: careType
+        });
+    };
     useEffect (() => {
         if (product !== undefined) {
-            create({...product})
-        }
-    },[product])
+            create({...product});
+        };
+    },[product]);
 
-    
-
-    const [title, setTitle] = useState('')
+    const [title, setTitle] = useState('');
     const titleChanger = (value:string) => {
         setTitle(value);
-    }
+    };
 
-    const [imgURL, setimgURL] = useState('')
+    const [imgURL, setimgURL] = useState('');
     const imgURLChanger = (value:string) => {
         setimgURL(value);
-    }
+    };
 
-    const [sizeType, setsizeType] = useState('')
+    const [sizeType, setsizeType] = useState('');
     const sizeTypeChanger = (value:string) => {
         setsizeType(value);
-    }
+    };
 
-    const [size, setSize] = useState(0)
+    const [size, setSize] = useState(0);
     const sizeChanger = (value:number) => {
         setSize(value);
-    }
+    };
 
-    const [barcode, setBarcode] = useState(0)
+    const [barcode, setBarcode] = useState(0);
     const barcodeChanger = (value:number) => {
         setBarcode(value);
-    }
+    };
     
-    const [producer, setProducer] = useState('')
+    const [producer, setProducer] = useState('');
     const producerChanger = (value:string) => {
         setProducer(value);
-    }
+    };
 
-    const [brand, setBrand] = useState('')
+    const [brand, setBrand] = useState('');
     const brandChanger = (value:string) => {
         setBrand(value);
-    }
+    };
 
-    const [desription, setDesription] = useState('')
+    const [desription, setDesription] = useState('');
     const desriptionChanger = (value:string) => {
         setDesription(value);
-    }
+    };
 
-    const [price, setPrice] = useState(0)
+    const [price, setPrice] = useState(0);
     const priceChanger = (value:number) => {
         setPrice(value);
-    }
+    };
 
-    const [careType, setCareType ] = useState<any>(["requerType"])
+    const [careType, setCareType ] = useState<any>(["requerType"]);
     const careTypeChanger = (value:Array<string>) => {
         if (value[0] == 'add') {
-            let addingType = [...careType, value[1]]
-            setCareType(addingType)
+            let addingType = [...careType, value[1]];
+            setCareType(addingType);
         } else if (value[0] == 'remove') {
-            let removingType = [...careType]
-            let index = removingType.indexOf(value[1], 0)
-            removingType.splice(index, 1)
-            setCareType(removingType)
-        }
-    }
+            let removingType = [...careType];
+            let index = removingType.indexOf(value[1], 0);
+            removingType.splice(index, 1);
+            setCareType(removingType);
+        };
+    };
 
     return (
         <div className="admin-form">
@@ -150,11 +159,9 @@ const AddNewProduct: FC<AddNewProductProps> =({create}) => {
                         </div>
                     </div>
                 </div>
-                
             </div>
-            
         </div>               
-    )
-}
+    );
+};
 
-export default AddNewProduct
+export default AddNewProduct;

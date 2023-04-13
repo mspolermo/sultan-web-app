@@ -1,20 +1,13 @@
-import React, {FC, useMemo, useState} from "react";
+import React, {FC} from "react";
 import { Link } from "react-router-dom";
-import '../App.css'
-
 
 interface HeaderProps {
     finalPrice:number;
-    productTypeValue?: string;
-    onProductTypeChange?: (newType: string) => void;
     countGoodsInBasket: number;
     testid: string;
 };
 
-
-
-const Header: FC<HeaderProps> = ({finalPrice, productTypeValue, onProductTypeChange, countGoodsInBasket, testid}) => {
-
+const Header: FC<HeaderProps> = ({finalPrice, countGoodsInBasket, testid}) => {
 
     return (
         <div data-testid={testid}>
