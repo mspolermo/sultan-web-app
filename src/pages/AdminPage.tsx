@@ -115,7 +115,7 @@ const AdminPage: FC<AdminPageProps> =({onGoodsUpdate, JSONfile}) => {
 
     
     return (
-        <div className="container">
+        <div data-testid="admin-page" className="container">
             <h2 className="admin-page__head">Страница администрирования сайта "Султан"</h2>
             <div className="admin-page__block">
                 <AddNewProduct create={createProduct}/>

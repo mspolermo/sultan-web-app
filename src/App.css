@@ -1282,33 +1282,76 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  border: 4px solid black;
+  border-radius: 10px;
+}
+.admin-form__column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  min-width: 300px;
   max-width: 400px;
-  border: 1px solid black;
+}
+.admin-form__column:last-child {
+  border-left: 1px solid black;
 }
 .admin-form__block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  min-height: 35px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border-bottom: 1px solid black;
 }
+.admin-form__block:last-child {
+  border-bottom: none;
+}
 .admin-form__field-name {
+  padding: 10px;
   width: 180px;
-  background-color: lightyellow;
   border-right: 1px solid black;
 }
 .admin-form__block-checkboxes {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 20px 0;
-  border-bottom: 1px solid black;
+  height: 100%;
+}
+.admin-form__btn {
+  margin-top: 20px;
+  padding: 21px 54px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+  background: #FFC85E;
+  border-radius: 79px;
 }
 
 .admin-list__head {
@@ -1398,6 +1441,101 @@ body {
 }
 .admin-list__btn {
   padding: 21px 54px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+  background: #FFC85E;
+  border-radius: 79px;
+}
+
+.admin-edit {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.admin-edit__head {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  color: #111111;
+}
+.admin-edit__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+.admin-edit__column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-width: 300px;
+  max-width: 400px;
+}
+.admin-edit__column:last-child {
+  border-left: 1px solid black;
+}
+.admin-edit__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 35px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-bottom: 1px solid black;
+}
+.admin-edit__block:last-child {
+  border-bottom: none;
+}
+.admin-edit__field-name {
+  padding: 10px;
+  width: 180px;
+  border-right: 1px solid black;
+}
+.admin-edit__block-checkboxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0;
+  height: 100%;
+}
+.admin-edit__btn {
+  max-width: 200px;
+  margin-left: 40px;
+  margin-top: 20px;
+  padding: 12px 12px;
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;

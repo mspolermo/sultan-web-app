@@ -146,111 +146,109 @@ const CatalogBody: FC<CatalogBodyProps> = ({goods, productTypeValue, onProductTy
 
     return (
         <div>
-
-        
-        <div className="catalog-head">
-            <div className="container catalog-head__container"> 
-                <h2 className="catalog-head__heading">КОСМЕТИКА И ГИГИЕНА</h2>
-                <div className="catalog-head__block">
-                    <span className="catalog-head__text">Сортировка: </span>
-                    <MySelect
-                        className="catalog-head__select" 
-                        value={selectedSort}
-                        onChange={sortGoods}
-                        defaultValue='Название'
-                        options={[
-                            {value: 'price', name: 'Цена: По возрастанию'},
-                            {value: 'price-down', name: 'Цена: По убыванию'},
-                            {value: 'title', name: 'Название: По возрастанию'},
-                            {value: 'title-down', name: 'Название: По убыванию'}
-                        ]}
-                    />
-                </div> 
-            </div>
-        </div>
-        <div className="nav-top">    
-            <div className="container nav-top__container"> 
-                <FilterButton className='nav-top__btn' value={selectedFilter} careType = 'body'name = 'Уход за&nbsp;телом'onClick={filerGoods} />
-                <FilterButton className='nav-top__btn' value={selectedFilter} careType = 'hands' name = 'Уход за&nbsp;руками' onClick={filerGoods} />
-                <FilterButton className='nav-top__btn' value={selectedFilter} careType = 'legs' name = 'Уход за&nbsp;ногами' onClick={filerGoods} />
-                <FilterButton className='nav-top__btn' value={selectedFilter} careType = 'face' name = 'Уход за&nbsp;лицом' onClick={filerGoods} />
-                <FilterButton className='nav-top__btn' value={selectedFilter} careType = 'hair' name = 'Уход за&nbsp;волосами' onClick={filerGoods} />
-                <FilterButton className='nav-top__btn' value={selectedFilter} careType = 'sun' name = 'Средства для&nbsp;загара' onClick={filerGoods} />
-                <FilterButton className='nav-top__btn' value={selectedFilter} careType = 'shaving' name = 'Средства для&nbsp;бритья' onClick={filerGoods} />
-                <FilterButton className='nav-top__btn' value={selectedFilter} careType = 'present' name = 'Подарочные наборы' onClick={filerGoods} />
-                <FilterButton className='nav-top__btn' value={selectedFilter} careType = 'hygienic' name = 'Гигиеническая продукция' onClick={filerGoods} />
-                <FilterButton className='nav-top__btn' value={selectedFilter} careType = 'mouth' name = 'Гигиена полости рта' onClick={filerGoods} />
-                <FilterButton className='nav-top__btn' value={selectedFilter} careType = 'paper' name = 'Бумажная продукция' onClick={filerGoods} />
-            </div>
-        </div>
-        <div className="catalog-body">
-            <div className="container catalog-body__container">
-                <div className="catalog-body__left"> 
-                    <h4 className="catalog-body__heading">Подбор по параметрам</h4>
-                    <p className="catalog-body__price">Цена ₸</p>
-                    <div className="catalog-body__pricing">
-                    <MyInput
-                        className="catalog-body__input-price" 
-                        value={minPrice}
-                        onChange={minPricing}
-                        placeholder = "0"
-                    />
-                    <p className="catalog-body__slicer">-</p>
-                        <MyInput
-                        className="catalog-body__input-price"  
-                        value={maxPrice}
-                        onChange={maxPricing}
-                        placeholder = "10 000"
-                    />
-                    </div>
-                    <h5 className="catalog-body__second-heading">Производитель</h5>
-                    <div className="catalog-body__search-querry">
-                        <MyInput 
-                            className="catalog-body__input-search"  
-                            value={searchProdicerQuery}
-                            onChange={queryGoods}
-                            placeholder = "Поиск"
+            <div className="catalog-head">
+                <div className="container catalog-head__container"> 
+                    <h2 className="catalog-head__heading">КОСМЕТИКА И ГИГИЕНА</h2>
+                    <div className="catalog-head__block">
+                        <span className="catalog-head__text">Сортировка: </span>
+                        <MySelect
+                            className="catalog-head__select" 
+                            value={selectedSort}
+                            onChange={sortGoods}
+                            defaultValue='Название'
+                            options={[
+                                {value: 'price', name: 'Цена: По возрастанию'},
+                                {value: 'price-down', name: 'Цена: По убыванию'},
+                                {value: 'title', name: 'Название: По возрастанию'},
+                                {value: 'title-down', name: 'Название: По убыванию'}
+                            ]}
                         />
-                        <div className="catalog-body__img">
-                            <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.5294 16.5294L13.0989 13.0928L16.5294 16.5294ZM15 8.5C15 10.2239 14.3152 11.8772 13.0962 13.0962C11.8772 14.3152 10.2239 15 8.5 15C6.77609 15 5.12279 14.3152 3.90381 13.0962C2.68482 11.8772 2 10.2239 2 8.5C2 6.77609 2.68482 5.12279 3.90381 3.90381C5.12279 2.68482 6.77609 2 8.5 2C10.2239 2 11.8772 2.68482 13.0962 3.90381C14.3152 5.12279 15 6.77609 15 8.5V8.5Z" stroke="white" strokeWidth="1.3" strokeLinecap="round"/></svg>
-                        </div>
                     </div> 
-                    <CheckboxList 
-                        value={checkbox}
-                        onClick={checkboxing}
-                        filtredGoodsList={sortedFiltreadSearchedPriceGoods}
-                        className ='catalog-body__'
-                    />
-                    <div className='catalog-body__filter-left'> 
-                        <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'body'name = 'Уход за телом'onClick={filerGoods} />
-                        <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'hands' name = 'Уход за руками' onClick={filerGoods} />
-                        <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'legs' name = 'Уход за ногами' onClick={filerGoods} />
-                        <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'face' name = 'Уход за лицом' onClick={filerGoods} />
-                        <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'hair' name = 'Уход за волосами' onClick={filerGoods} />
-                        <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'sun' name = 'Средства для загара' onClick={filerGoods} />
-                        <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'shaving' name = 'Средства для бритья' onClick={filerGoods} />
-                        <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'present' name = 'Подарочные наборы' onClick={filerGoods} />
-                        <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'hygienic' name = 'Гигиеническая продукция' onClick={filerGoods} />
-                        <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'mouth' name = 'Гигиена полости рта' onClick={filerGoods} />
-                        <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'paper' name = 'Бумажная продукция' onClick={filerGoods} />
-                    </div>   
                 </div>
-                <GoodsList 
-                    goods={pagingPage}
-                    goodsWithoutFilters={goods} 
-                    productTypeValue={productType}
-                    onProductTypeChange={setProductType}
-                />
-                
             </div>
-        </div>
-            <div className="pagination">
-                    {pagesArray.map( p =>
-                        <span className="pagination__number"
-                            key={p}
-                            onClick={() => setPageNumber(p)}
-                        >{p}</span>)}
+            <div className="nav-top">    
+                <div className="container nav-top__container"> 
+                    <FilterButton className='nav-top__btn' value={selectedFilter} careType = 'body'name = 'Уход за&nbsp;телом'onClick={filerGoods} />
+                    <FilterButton className='nav-top__btn' value={selectedFilter} careType = 'hands' name = 'Уход за&nbsp;руками' onClick={filerGoods} />
+                    <FilterButton className='nav-top__btn' value={selectedFilter} careType = 'legs' name = 'Уход за&nbsp;ногами' onClick={filerGoods} />
+                    <FilterButton className='nav-top__btn' value={selectedFilter} careType = 'face' name = 'Уход за&nbsp;лицом' onClick={filerGoods} />
+                    <FilterButton className='nav-top__btn' value={selectedFilter} careType = 'hair' name = 'Уход за&nbsp;волосами' onClick={filerGoods} />
+                    <FilterButton className='nav-top__btn' value={selectedFilter} careType = 'sun' name = 'Средства для&nbsp;загара' onClick={filerGoods} />
+                    <FilterButton className='nav-top__btn' value={selectedFilter} careType = 'shaving' name = 'Средства для&nbsp;бритья' onClick={filerGoods} />
+                    <FilterButton className='nav-top__btn' value={selectedFilter} careType = 'present' name = 'Подарочные наборы' onClick={filerGoods} />
+                    <FilterButton className='nav-top__btn' value={selectedFilter} careType = 'hygienic' name = 'Гигиеническая продукция' onClick={filerGoods} />
+                    <FilterButton className='nav-top__btn' value={selectedFilter} careType = 'mouth' name = 'Гигиена полости рта' onClick={filerGoods} />
+                    <FilterButton className='nav-top__btn' value={selectedFilter} careType = 'paper' name = 'Бумажная продукция' onClick={filerGoods} />
+                </div>
             </div>
+            <div className="catalog-body">
+                <div className="container catalog-body__container">
+                    <div className="catalog-body__left"> 
+                        <h4 className="catalog-body__heading">Подбор по параметрам</h4>
+                        <p className="catalog-body__price">Цена ₸</p>
+                        <div className="catalog-body__pricing">
+                        <MyInput
+                            className="catalog-body__input-price" 
+                            value={minPrice}
+                            onChange={minPricing}
+                            placeholder = "0"
+                        />
+                        <p className="catalog-body__slicer">-</p>
+                            <MyInput
+                            className="catalog-body__input-price"  
+                            value={maxPrice}
+                            onChange={maxPricing}
+                            placeholder = "10 000"
+                        />
+                        </div>
+                        <h5 className="catalog-body__second-heading">Производитель</h5>
+                        <div className="catalog-body__search-querry">
+                            <MyInput 
+                                className="catalog-body__input-search"  
+                                value={searchProdicerQuery}
+                                onChange={queryGoods}
+                                placeholder = "Поиск"
+                            />
+                            <div className="catalog-body__img">
+                                <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.5294 16.5294L13.0989 13.0928L16.5294 16.5294ZM15 8.5C15 10.2239 14.3152 11.8772 13.0962 13.0962C11.8772 14.3152 10.2239 15 8.5 15C6.77609 15 5.12279 14.3152 3.90381 13.0962C2.68482 11.8772 2 10.2239 2 8.5C2 6.77609 2.68482 5.12279 3.90381 3.90381C5.12279 2.68482 6.77609 2 8.5 2C10.2239 2 11.8772 2.68482 13.0962 3.90381C14.3152 5.12279 15 6.77609 15 8.5V8.5Z" stroke="white" strokeWidth="1.3" strokeLinecap="round"/></svg>
+                            </div>
+                        </div> 
+                        <CheckboxList 
+                            value={checkbox}
+                            onClick={checkboxing}
+                            filtredGoodsList={sortedFiltreadSearchedPriceGoods}
+                            className ='catalog-body__'
+                        />
+                        <div className='catalog-body__filter-left'> 
+                            <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'body'name = 'Уход за телом'onClick={filerGoods} />
+                            <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'hands' name = 'Уход за руками' onClick={filerGoods} />
+                            <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'legs' name = 'Уход за ногами' onClick={filerGoods} />
+                            <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'face' name = 'Уход за лицом' onClick={filerGoods} />
+                            <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'hair' name = 'Уход за волосами' onClick={filerGoods} />
+                            <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'sun' name = 'Средства для загара' onClick={filerGoods} />
+                            <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'shaving' name = 'Средства для бритья' onClick={filerGoods} />
+                            <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'present' name = 'Подарочные наборы' onClick={filerGoods} />
+                            <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'hygienic' name = 'Гигиеническая продукция' onClick={filerGoods} />
+                            <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'mouth' name = 'Гигиена полости рта' onClick={filerGoods} />
+                            <FilterButton className='catalog-body__btn' value={selectedFilter} careType = 'paper' name = 'Бумажная продукция' onClick={filerGoods} />
+                        </div>   
+                    </div>
+                    <GoodsList 
+                        goods={pagingPage}
+                        goodsWithoutFilters={goods} 
+                        productTypeValue={productType}
+                        onProductTypeChange={setProductType}
+                    />
+                    
+                </div>
+            </div>
+                <div className="pagination">
+                        {pagesArray.map( p =>
+                            <span className="pagination__number"
+                                key={p}
+                                onClick={() => setPageNumber(p)}
+                            >{p}</span>)}
+                </div>
       </div>
     );
 };

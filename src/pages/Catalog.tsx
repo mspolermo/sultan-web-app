@@ -21,7 +21,7 @@ const Catalog: FC<CatalogProps> = ({goods, productTypeValue, onProductTypeChange
 
     
     return (
-        <div>
+        <div data-testid="catalog-page">
             <CatalogBody
                 goods={goods} 
                 productTypeValue={productType}

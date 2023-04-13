@@ -60,7 +60,6 @@ const Basket: FC<BasketProps> = ({orderList, onOrderThingChange, onRemove, final
 
     const [openMessage, setOpenMessage] = useState('basket__mesasge_hidden');
     const offer = () => {
-        //alert('Спасибо за заказ!')
         setOpenMessage('basket__mesasge')
         
     }
@@ -71,7 +70,7 @@ const Basket: FC<BasketProps> = ({orderList, onOrderThingChange, onRemove, final
     }
 
     return (
-        <div className='basket'>
+        <div data-testid="basket-page" className='basket'>
             <div className='container basket__container'>
                 <div className="basket__heading">КОРЗИНА</div>
                 <div className="basket__list">

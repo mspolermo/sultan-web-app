@@ -6,7 +6,7 @@ import './App.css'
 import Catalog from './pages/Catalog';
 import ProductCard from './pages/ProductCard';
 import Basket from './pages/Basket';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import Header from './components/Header';
 import { IGoods } from './types/types';
@@ -100,13 +100,13 @@ function App() {
   }, [sumOfMoneyArray])
 
   const [removeThing, setRemoveThing] = useState<undefined | IGoods>();
-  useMemo(() => {
+
+  useEffect(() => {
 
     let index = orderList.findIndex ( (order:any) => order.id === removeThing?.id)
-
+    
     if (index!== -1) {
       orderList.splice(index, 1);
-      
       setOrderList(orderList)
     }
     if (orderList.length !== sumOfMoneyArray.length) {
@@ -129,12 +129,13 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
+    <div >
       <div>
-        <NavLink to="/catalog/">Каталог товаров</NavLink>
+        <NavLink to="/catalog/" >Каталог товаров</NavLink>
         <NavLink to="/basket">Корзина</NavLink>
-        <NavLink to="/admin">Админка</NavLink>
+        <NavLink to="/admin" data-testid="admin-link">Админка</NavLink>
         <Header 
+            testid='header-elem'
             finalPrice={finalPrice}
             productTypeValue={productType}
             onProductTypeChange={setProductType}
@@ -167,10 +168,11 @@ function App() {
             onGoodsUpdate ={setGoods}
             JSONfile = {goodsJSON}
           />}></Route>
+          <Route path="*" element={<Navigate to='/catalog' />} />
         </Routes>
       </div>
-      <Footer />
-    </BrowserRouter>
+      <Footer testid='footer-elem'/>
+    </div>
   );
 }
 

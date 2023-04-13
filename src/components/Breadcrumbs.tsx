@@ -11,7 +11,6 @@ interface BreadcrumbsProps {
 const Breadcrumbs: FC<BreadcrumbsProps> = ({goods}) => {
 
     const location = useLocation()
-    //console.log(location)
 
     let currentLink:any = []
     const crumbs = location.pathname.split('/')
@@ -30,18 +29,17 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({goods}) => {
                                 ? ('Корзина')
                                 : (crumb.toString() == 'admin')
                                     ? ('Страница администрирования сайта')
-                                    : (goods[crumb.toString()].title)
+                                    : (crumb.toString())
                     }
                         </div>
                     </Link>
                 </div>
             )
-
         })
 //(crumb.toString())
  //(goods[crumb.toString()].title)
     return (
-        <div className="breadcrumbs">
+        <div className="breadcrumbs" data-testid="breadcrumbs-elem">
             <div className="container breadcrumbs__container">
                <Link to='/'>
                     <div className="breadcrumbs__crumb">

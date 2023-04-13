@@ -1,8 +1,12 @@
 import React, {FC} from "react";
 
-const Footer: FC = () => {
+interface FooterProps {
+    testid: string;
+}
+
+const Footer: FC<FooterProps> = ({testid}) => {
     return (
-<div>
+<div data-testid={testid}>
     <section className="footer">
         <div className="container footer__container">
             <div className="footer__flex-block footer__first">
