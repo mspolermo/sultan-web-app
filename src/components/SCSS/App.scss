@@ -68,7 +68,6 @@ body {
     border-top: 1px solid rgb(208, 212, 216);
     border-bottom: 1px solid rgb(208, 212, 216);
     &__container {
-        
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -76,12 +75,12 @@ body {
     &__block {
         margin: 4px 20px 10px;
         &_btn {
-            //flex: 1 0 15%;
             min-width: 200px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 21px 54px;
+
             background: #FFC85E;
             border-radius: 79px;
         }
@@ -91,6 +90,7 @@ body {
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             background: #EDEDED;
             border-radius: 36px;
         }
@@ -106,11 +106,13 @@ body {
         }
     }
     &__btn-name{
-        white-space: nowrap;
         margin-right: 15px;
+
         font-weight: 700;
         font-size: 14px;
         line-height: 17px;
+
+        white-space: nowrap;
         color: #FFFFFF;
     }
     &__input {
@@ -120,6 +122,7 @@ body {
     &__btn {
         padding: 12px;
         margin-right: 10px;
+
         background: #FFC85E;
         border-radius: 1000px;
     }
@@ -142,13 +145,15 @@ body {
     &__phone {
         font-weight: 600;
         font-size: 14px;
-        line-height: 150%;        
+        line-height: 150%;
+
         color: #111111;
     }
     &__additional {
         font-weight: 300;
         font-size: 12px;
         line-height: 150%;
+
         color: #3F4E65;
     }
     &__order {
@@ -157,11 +162,13 @@ body {
         font-size: 10px;
         line-height: 150%;
         text-decoration-line: underline;
+
         color: #3F4E65;
     }
     &__photo {
         min-height: 113px;
         min-width: 74px;
+
         background: url(/src/images/header-down-cons.png) no-repeat center center;
     }
     &__counter{
@@ -170,19 +177,21 @@ body {
         position: absolute;
         top: 0;
         left: 30px;
+
+        font-size: 14px;
+        font-weight: 700;
         text-align: center;
+        line-height: 17px;
+
         border-radius: 100%;
         background: #FFC85E;
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 17px;
-        text-align: center;
         color: #FFFFFF
     }
     &__price{
         font-weight: 600;
         font-size: 14px;
         line-height: 150%;
+
         color: #111111;
     }
 }
@@ -215,11 +224,9 @@ body {
     }
     &__block:last-child .breadcrumbs__crumb{
         color: rgba($color: #3F4E65, $alpha: 0.5)
-
     }
 }
 .footer {
-    
     padding: 70px 0 116px;
     background: #3F4E65;
     &__container {
@@ -238,24 +245,26 @@ body {
         font-weight: 400;
         font-size: 16px;
         line-height: 150%;
-        color: #FFFFFF;
 
+        color: #FFFFFF;
     }
     &__subscribe {
         margin-bottom: 14px;
         padding-top: 45px;
+
         font-weight: 400;
         font-size: 12px;
         line-height: 150%;
+
         color: #FFFFFF;
     }
     &__input-block{
+        height: 59px;
         display: flex;
         justify-content: space-between;
+
         background: #FFFFFF;
         border-radius: 36px;
-        height: 59px;
-
     }
     &__input {
         margin-left: 30px;
@@ -263,13 +272,14 @@ body {
     &__btn{
         padding: 12px 16px;
         border-radius: 1000px; 
+
         color: white;
         background: #FFC85E;
         &_price{
             margin-bottom: 20px;
+            padding: 21px 51px;
             display: flex;
             justify-content: space-between;
-            padding: 21px 51px;
         }
         &_price-mobile {
             display: none;
@@ -279,6 +289,7 @@ body {
             padding: 12px 15px;
             height: 39px;
             align-self: center;
+
             background: #FFC85E;
             border-radius: 100%;
         }
@@ -289,17 +300,21 @@ body {
     }
     &__head {
         margin-bottom: 25px;
+
         font-weight: 600;
         font-size: 20px;
         line-height: 150%;
+
         color: #FFFFFF;
     }
     &__item {
         display: block;
         margin-bottom: 20px;
+
         font-weight: 400;
         font-size: 14px;
         line-height: 150%;
+
         cursor: pointer;
         color: #FFFFFF;
     }
@@ -332,13 +347,16 @@ body {
     }
     &__phone{
         margin-bottom: 5px;
+
         font-weight: 600;
         font-size: 14px;
         line-height: 150%;
+
         color: #FFFFFF;
     }
     &__additional{
         margin-bottom: 5px;
+
         font-weight: 300;
         font-size: 12px;
         line-height: 150%;
@@ -350,6 +368,7 @@ body {
         font-size: 10px;
         line-height: 150%;
         text-decoration-line: underline;
+
         color: #FFFFFF;
     }
     &__mail{
@@ -357,6 +376,7 @@ body {
         font-weight: 600;
         font-size: 14px;
         line-height: 18px;
+
         color: #FFFFFF;
     }
     &__six{
@@ -372,22 +392,23 @@ body {
         align-items: center;
     }
     &__heading {
-        
         font-weight: 500;
         font-size: 40px;
         line-height: 120%;
         text-transform: uppercase;
+
         color: #111111;
     }
     &__text{
         font-weight: 500;
         font-size: 16px;
         line-height: 150%;
+
         color: #111111;
     }
     &__select{
-        
-        font-weight: 400; 
+        font-weight: 400;
+
         color: #3F4E65;  
     }
 }
@@ -399,10 +420,12 @@ body {
     }
     &__btn {
         padding: 18px 16.5px;
+
         font-weight: 400;
         font-size: 14px;
         line-height: 17px;
         text-align: center;
+
         color: #3F4E65;
         background-color: inherit;
     }
@@ -417,42 +440,47 @@ body {
     }
     &__heading{
         margin-bottom: 10px;
+
         font-weight: 500;
         font-size: 16px;
         line-height: 150%;
+
         color: #111111;
     }
     &__price {
         margin-bottom: 16px;
+
         font-weight: 300;
         font-size: 14px;
         line-height: 150%;
+
         color: #3F4E65;
     }
     &__pricing{
         margin-bottom: 30px;
-        display: flex;
-        justify-content: space-between;
         max-width: 238px;
 
+        display: flex;
+        justify-content: space-between;
     }
     &__input-price{
-        max-width: 120px !important;
+        max-width: 120px;
         width: 100%;
         text-align: center;
+
         background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
         border-radius: 1000px;
-
     }
     &__slicer{
         padding: 0 10px ;
-
     }
     &__second-heading{
         margin-bottom: 15px;
+
         font-weight: 500;
         font-size: 16px;
         line-height: 150%;
+
         color: #111111;
     }
     &__search-querry {
@@ -460,20 +488,22 @@ body {
         margin-bottom: 15px;
         display: flex;
         justify-content: space-between;
+
         background: #EDEDED;
         border-radius: 36px;
     }
     &__input-search{
         margin-left: 30px;
         height: 59px;
+
         background: #EDEDED;
     }
     &__img{
         position: absolute;
         right: 10px;
         top: 5px;
-        //margin: 10px 0 10px;
         padding: 13px;
+
         background: #FFC85E;
         border-radius: 1000px;
     }
@@ -487,24 +517,27 @@ body {
         margin-bottom: 15px;
     }
     &__producer {
-        
         font-weight: 400;
         font-size: 14px;
         line-height: 150%;
+
         color: #3F4E65;
     }
     &__count {
         font-weight: 400;
         font-size: 10px;
         line-height: 150%;
+
         color: #3F4E65;
     }
     &__hidden-btn {
         margin-bottom: 25px;
         padding-top: 15px;
+
         font-weight: 500;
         font-size: 12px;
         line-height: 150%;
+
         color: #3F4E65;
         background-color: inherit;
     }
@@ -514,10 +547,12 @@ body {
     }
     &__btn {
         margin-bottom: 15px;
+
         font-weight: 500;
         font-size: 16px;
         line-height: 150%;
         text-transform: uppercase;
+
         border-bottom: 1px dashed #3F4E65;;
         color: #111111;
         background-color: inherit;
@@ -531,15 +566,14 @@ body {
         justify-content: space-evenly;
     }
     &__item{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
         margin: 0px 0 21px 0;
         padding: 42px 21px 29px 23px;
         min-height: 490px;
         max-height: 520px;
         width: 326px;
-        //border: 1px solid gray;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     &__img-block{
         display: flex;
@@ -562,10 +596,11 @@ body {
     }
     &__size-description{
         padding-left: 8px;
-        color: #3F4E65;
+
         font-weight: 400;
         font-size: 12px;
         line-height: 130%;
+
         color: #3F4E65;
     }
     &__description {
@@ -573,10 +608,12 @@ body {
     }
     &__title {
         margin-right: 4px;
+
         font-weight: 700;
         font-size: 16px;
         line-height: 130%;
         text-transform: uppercase;
+
         color: #111111;
     }
     &__title-additional {
@@ -591,6 +628,7 @@ body {
         font-weight: 300;
         font-size: 14px;
         line-height: 150%;
+
         color: #3F4E65;
     }
     &__field-value {
@@ -606,17 +644,20 @@ body {
         font-weight: 800;
         font-size: 16px;
         line-height: 130%;
+
         color: #111111;
     }
     &__btn{
         padding: 16px 14px 20px 25px;
-        text-transform: uppercase;
-        border: none;
-        border-radius: 80px;
+
         font-weight: 700;
         font-size: 10px;
         line-height: 12px;
         letter-spacing: 0.25em;
+        text-transform: uppercase;
+
+        border: none;
+        border-radius: 80px;
         color: #FFFFFF;
         background: #FFC85E;
     }
@@ -632,9 +673,11 @@ body {
     &__number {
         margin-right: 21px;
         margin-bottom: 100px;
+
         font-weight: 500;
         font-size: 18px;
         line-height: 130%;
+
         cursor: pointer; 
     }
 }
@@ -651,7 +694,6 @@ body {
         display: flex;
         align-content: center;
         justify-content: center;
-        //margin: auto;
     }
     &__img {
         max-height: 100%;
@@ -664,14 +706,17 @@ body {
     }
     &__available {
         margin-bottom: 10px;
+
         font-weight: 500;
         font-size: 14px;
         line-height: 130%;
+
         color: #1FD85D;
     }
     &__description{
         margin-bottom: 10px;
         max-width: 628px;
+
         color: #111111;
     }
     &__title {
@@ -691,10 +736,11 @@ body {
     }
     &__size-description{
         padding-left: 8px;
-        color: #3F4E65;
+
         font-weight: 400;
         font-size: 12px;
         line-height: 130%;
+
         color: #3F4E65;
     }
     &__buy-item {
@@ -708,34 +754,38 @@ body {
         font-weight: 800;
         font-size: 30px;
         line-height: 130%;
+
         color: #111111;
     }
     &__btn{
         padding: 21px 22px 22px 39px;
-        text-transform: uppercase;
-        border: none;
-        border-radius: 80px;
+        
         font-weight: 700;
         font-size: 14px;
         line-height: 17px;
         letter-spacing: 0.20em;
+        text-transform: uppercase;
+
+        border: none;
+        border-radius: 80px;
         color: #FFFFFF;
         background: #FFC85E;
     } 
     &__share-block {
         margin-bottom: 35px;
+        max-width: 628px;
         display: flex;
-        //padding-left: 28px;
         justify-content: space-evenly;
         align-items: center;
-        max-width: 628px;
     } 
     &__promotion {
         max-width: 245px;
+
         font-weight: 400;
         font-size: 12px;
         line-height: 150%;
         text-align: center;
+
         color: #3F4E65;  
     } 
     &__pricelist-btn{
@@ -745,9 +795,11 @@ body {
     } 
     &__pricelist {
         margin-right: 12px;
+
         font-weight: 700;
         font-size: 14px;
         line-height: 17px;
+
         color: #3F4E65;
     }
     &__info {
@@ -758,60 +810,66 @@ body {
         font-weight: 300;
         font-size: 14px;
         line-height: 150%;
+
         color: #3F4E65;
     }
     &__field-value {
         font-weight: 500;
         font-size: 14px;
+
         color: #111111;
     }
     &__head{
         margin: 15px 0;
+
         font-weight: 500;
         font-size: 16px;
         line-height: 150%;
+
         color: #111111;
     }
     &__text{
         max-width: 628px;
         padding-bottom: 20px;
+
         font-weight: 300;
         font-size: 12px;
         line-height: 150%;
+
         color: #3F4E65;
         border-bottom: 1px dashed #3F4E65;;
     }
 }
 
 .basket {
-
     &__heading {
         padding-bottom: 50px;
+
         font-weight: 500;
         font-size: 40px;
         line-height: 120%;
         text-transform: uppercase;
+
         border-bottom: 1px dashed #3F4E65;
         color: #111111;
     }
     &__list {
+        min-height: 1000px;
         display: flex;
         flex-direction: column;
-        min-height: 1000px;
     }
     &__item {
-        display: flex;
-        border-bottom: 1px dashed #3F4E65;
         padding: 65px 0;
-        //width: 400px;
-        min-height: 200px
+        min-height: 200px;
+        display: flex;
+
+        border-bottom: 1px dashed #3F4E65;
     }
     &__block {
 
         &_img {
             flex: 0 1 20%;
             margin-right: 20px;
-            //max-width: 281px;
             max-height: 191px;
             display: flex;
             align-items: center;   
@@ -828,18 +886,15 @@ body {
     }
     &__block-counter {
         margin-left: 20px;
-        // flex: 0 1 10%;
         display: flex;
         align-items: center;
     }
     &__block-price {
-        // flex: 0 1 20%;
         min-width: 114px;
         align-self: center;
         text-align: center;
     }
     &__block-del {
-        // flex: 0 1 10%;
         align-self: center;
     }
     &__img {
@@ -854,17 +909,20 @@ body {
     }
     &__size-description{
         padding-left: 8px;
-        color: #3F4E65;
+
         font-weight: 400;
         font-size: 12px;
         line-height: 130%;
+
         color: #3F4E65;
     }
     &__description {
         max-width: 444px;
+
         font-weight: 700;
         font-size: 30px;
         line-height: 36px;
+
         color: #111111;
     }
     &__title-additional {
@@ -877,36 +935,44 @@ body {
         font-weight: 300;
         font-size: 12px;
         line-height: 150%;
+
         color: #3F4E65;
     }
     &__btn-count{
         margin-right: 17px;
         padding: 4px 14px;
+
         background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
         border-radius: 1000px;
     }
     &__counter {
         margin-right: 21px;
+
         font-weight: 500;
         font-size: 14px;
         line-height: 130%;
+
         color: #3F4E65;
     }
     &__price {
         font-weight: 700;
         font-size: 30px;
         line-height: 130%;
+
         color: #111111;   
     }
     &__btn {
         padding: 20px;
+
         background: #FFC85E;
         border-radius: 79px;
         &_order {
             padding: 21px 38px;
+
             font-weight: 700;
             font-size: 14px;
             line-height: 17px;
+
             color: #FFFFFF;
             background: #FFC85E;
             border-radius: 79px;
@@ -920,17 +986,19 @@ body {
     }
     &__mesasge{
         display: block;
+        padding: 36px 36px 0 0;
         width: 735px;
         height: 424px;
-        border: 1px solid black;
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 36px 36px 0 0;
+        
+        border: 1px solid black;
         border-radius: 8px;
         background: white;
         &_hidden {
@@ -942,20 +1010,24 @@ body {
     }  
     &__close {
         margin-bottom: 67px;
+
         font-size: 24px;
         width: 24px;
         align-self: flex-end;
+
         background-color: white;
         color: #FFC85E;
     }
     &__head{
         margin-bottom: 20px;
         padding-top: 24px;
+
         font-weight: 500;
         font-size: 40px;
         line-height: 120%;
         text-align: center;
         text-transform: uppercase;
+
         color: #111111;
     }
     &__text-message{
@@ -963,6 +1035,7 @@ body {
         font-size: 20px;
         line-height: 120%;
         text-align: center;
+
         color: #3F4E65;
     }
 }
@@ -973,13 +1046,16 @@ body {
         font-size: 40px;
         line-height: 120%;
         text-transform: uppercase;
+
         color: #111111; 
     }
     &__btn {
         padding: 21px 54px;
+
         font-weight: 700;
         font-size: 14px;
         line-height: 17px;
+
         color: #FFFFFF;
         background: #FFC85E;
         border-radius: 79px;
@@ -992,16 +1068,11 @@ body {
     }
 }
 .admin-form {
-    // max-width: 1920px;
-    // margin-right: auto;
-    // margin-left: auto;
-    // padding-left: 277px;
-    // padding-right: 277px;
-
     &__body{
         display: flex;
         align-items: stretch;
         justify-content: stretch;
+
         border: 4px solid black;
         border-radius: 10px;
     }
@@ -1010,7 +1081,6 @@ body {
         flex-direction: column;
         min-width: 300px;
         max-width: 400px;
-        //
     }
     &__column:last-child {
         border-left: 1px solid black;
@@ -1020,6 +1090,7 @@ body {
         min-height: 35px;
         align-items: center;
         justify-content: center;
+
         border-bottom: 1px solid black;
     }
     &__block:last-child {
@@ -1028,24 +1099,25 @@ body {
     &__field-name {
         padding: 10px;
         width: 180px;
-        //background-color: lightyellow;
+        
         border-right: 1px solid black;
     }
     &__block-checkboxes{
+        padding: 20px 0;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        padding: 20px 0;
-        height: 100%;
-        //border-bottom: 1px solid black;
     }
     &__btn {
         margin-top: 20px;
         padding: 21px 54px;
+
         font-weight: 700;
         font-size: 14px;
         line-height: 17px;
+
         color: #FFFFFF;
         background: #FFC85E;
         border-radius: 79px;
@@ -1054,11 +1126,13 @@ body {
 .admin-list {
     &__head {
         margin-bottom: 40px;
+
         font-weight: 500;
         font-size: 30px;
         line-height: 120%;
         text-transform: uppercase;
         text-align: center;
+
         color: #111111;         
     }
     &__body {
@@ -1069,6 +1143,7 @@ body {
         display: flex;
         margin: 10px;
         padding: 0 10px;
+
         border: 2px solid black;
         border-radius: 14px;
     }
@@ -1083,27 +1158,31 @@ body {
         font-weight: 400;
         font-size: 14px;
         line-height: 150%;
+
         color: #3F4E65;;
         &_bold{
             font-weight: 700;
             font-size: 14px;
             line-height: 150%;
+
             color: #111111;
         }
     }
     &__careType {
+        padding: 10px;
         display: flex;
         flex-direction: column;
         width: 100px;
+
         border-left: 1px solid #000;
         border-right: 1px solid black;
-        padding: 10px;
     }
     &__img-block {
         width: 400px;
         display: flex;
         align-items: center;
         justify-content: center;
+
         border-right: 1px solid black;
     }
     &__block-btns {
@@ -1114,15 +1193,15 @@ body {
     }
     &__btn {
         padding: 21px 54px;
+
         font-weight: 700;
         font-size: 14px;
         line-height: 17px;
+
         color: #FFFFFF;
         background: #FFC85E;
         border-radius: 79px;
     }
-
-
 }
 .admin-edit {
     margin-bottom: 20px;
@@ -1130,17 +1209,19 @@ body {
     flex-direction: column;
     align-items: center;
     &__head {
-        //text-align: center;
         margin-bottom: 10px;
+
         font-weight: 500;
         font-size: 20px;
         line-height: 150%;
+
         color: #111111;
     }
     &__body{
         display: flex;
         align-items: stretch;
         justify-content: stretch;
+
         border-radius: 10px;
         border: 1px solid black;
     }
@@ -1149,7 +1230,6 @@ body {
         flex-direction: column;
         min-width: 300px;
         max-width: 400px;
-        //
     }
     &__column:last-child {
         border-left: 1px solid black;
@@ -1159,6 +1239,7 @@ body {
         min-height: 35px;
         align-items: center;
         justify-content: center;
+
         border-bottom: 1px solid black;
     }
     &__block:last-child {
@@ -1167,7 +1248,7 @@ body {
     &__field-name {
         padding: 10px;
         width: 180px;
-        //background-color: lightyellow;
+        
         border-right: 1px solid black;
     }
     &__block-checkboxes{
@@ -1176,16 +1257,17 @@ body {
         align-items: center;
         padding: 20px 0;
         height: 100%;
-        //border-bottom: 1px solid black;
     }
     &__btn {
         max-width: 200px;
         margin-left: 40px;
         margin-top: 20px;
         padding: 12px 12px;
+
         font-weight: 700;
         font-size: 14px;
         line-height: 17px;
+
         color: #FFFFFF;
         background: #FFC85E;
         border-radius: 79px;
@@ -1232,7 +1314,6 @@ body {
             margin-right: 25px;
         }
         &__second{
-            //min-width: 126px;
             margin-right: 25px;
         }
         &__third {
@@ -1410,7 +1491,6 @@ body {
     .basket {
         &__item{
             flex-direction: column;
-            // justify-content: center;
             align-items: center; 
         }
         &__block {
@@ -1468,7 +1548,6 @@ body {
         transform: translateX(0px);
     }
     .footer {
-
         &__first {
             margin-right: 0;
             min-width: none;
@@ -1607,7 +1686,6 @@ body {
         }
         &__btn{
             &_price-mobile {
-                //flex: 1 0 40%;
                 padding: 12px 15px 12px 29px;
                 height: 38px;
             }
@@ -1641,7 +1719,6 @@ body {
         &__second {
             margin-right: 0;
             min-width: 120px;
-            //max-width: 110px;
         }
         &__third {
             margin-right: 0;
